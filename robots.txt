@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fomin-developer.pages.dev/sitemap.xml

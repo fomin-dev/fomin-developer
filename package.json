@@ -1,0 +1,18 @@
+{
+  "name": "fomin-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "sharp": "^0.35.3",
+    "terser": "^5.49.0"
+  }
+}
