@@ -8,12 +8,13 @@ A single-page portfolio site for a freelance developer specializing in Telegram 
 
 ## About this project
 
-This site is my professional portfolio: it presents my services, pricing, and case studies of real client work (a Telegram bot for a flower shop, a restaurant website, and a catalog site for a modular-housing company). I designed, coded, and deployed every part of it myself — copy, layout, animation, and infrastructure.
+This site is my professional portfolio: it presents my services, pricing, a business-results section, and case studies of real client work (a Telegram bot for a flower shop, a bar website, and a catalog site for a modular-housing company). I designed, coded, and deployed every part of it myself — copy, layout, animation, and infrastructure.
 
 I'm sharing it here as a work sample: it demonstrates my approach to front-end engineering (semantic markup, custom animation without heavy dependencies, a from-scratch i18n system, and an automated asset pipeline) as well as product thinking (pricing structure, case-study writing, conversion-oriented layout).
 
 ## Features
 
+- **Business-results section** — a proof-of-value band between Services and Pricing that translates technical features into outcomes a client cares about (24/7 order automation, real measured load time, instant lead notifications, multi-language reach), plus a short "Результат" callout inside every case study.
 - **Custom cursor & particle background** — a lightweight canvas-based particle field with proximity connections, plus a magnetic-button and 3D tilt-card interaction layer, all written in vanilla JS.
 - **Scroll-driven animation** — GSAP + ScrollTrigger for parallax on the hero section, combined with a native `IntersectionObserver` reveal system for content sections (with a `prefers-reduced-motion` fallback that disables all animation).
 - **Three-language i18n from scratch** — RU / EN / UA switching via a small `data-i18n` attribute system and a JSON dictionary per language, fetched on demand and cached, with the default language persisted in `localStorage`.
