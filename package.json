@@ -4,7 +4,9 @@
   "description": "",
   "main": "sw.js",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "check": "node scripts/check.js",
+    "test": "npm run check"
   },
   "keywords": [],
   "author": "",

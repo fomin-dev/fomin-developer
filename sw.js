@@ -1,63 +1,73 @@
-const CACHE_NAME = 'fomin-portfolio-v6';
-const ASSETS = [
+const CACHE_NAME = 'fomin-portfolio-v7';
+const CORE_ASSETS = [
   '/',
   '/index.html',
   '/css/style.min.css',
   '/js/main_min.js',
   '/i18n/ru.json',
   '/i18n/en.json',
-  '/i18n/ua.json',
+  '/i18n/uk.json',
   '/assets/logo.jpg',
-  '/assets/logo.webp',
-  '/assets/floressa-1.jpg',
-  '/assets/floressa-1.webp',
-  '/assets/floressa-2.jpg',
-  '/assets/floressa-2.webp',
-  '/assets/floressa-3.jpg',
-  '/assets/floressa-3.webp',
-  '/assets/floressa-4.jpg',
-  '/assets/floressa-4.webp',
-  '/assets/floressa-5.jpg',
-  '/assets/floressa-5.webp',
-  '/assets/wave_beer.jpg',
-  '/assets/wave_beer.webp',
-  '/assets/photo_2026-07-09_16-56-20.jpg',
-  '/assets/photo_2026-07-09_16-56-20.webp',
-  '/assets/photo_2026-07-09_16-56-27.jpg',
-  '/assets/photo_2026-07-09_16-56-27.webp',
-  '/assets/photo_2026-07-09_16-56-30.jpg',
-  '/assets/photo_2026-07-09_16-56-30.webp',
-  '/assets/photo_2026-07-11_12-08-44.jpg',
-  '/assets/photo_2026-07-11_12-08-44.webp',
-  '/assets/photo_2026-07-11_12-08-47.jpg',
-  '/assets/photo_2026-07-11_12-08-47.webp'
+  '/assets/logo.webp'
 ];
 
-self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(ASSETS)));
-  self.skipWaiting();
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(CORE_ASSETS))
+      .then(() => self.skipWaiting())
+  );
 });
 
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))))
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url);
-  if (url.origin !== location.origin) return;
-  e.respondWith(
-    caches.match(e.request).then((cached) => {
-      const fetchPromise = fetch(e.request).then((res) => {
-        if (res.ok) {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then((c) => c.put(e.request, clone));
-        }
-        return res;
-      }).catch(() => cached);
-      return cached || fetchPromise;
-    })
-  );
+async function cacheResponse(request, response) {
+  if (!response || !response.ok || response.type !== 'basic') return response;
+  const cache = await caches.open(CACHE_NAME);
+  cache.put(request, response.clone());
+  return response;
+}
+
+async function networkFirst(request, fallback) {
+  try {
+    const response = await fetch(request, { cache: 'no-cache' });
+    return cacheResponse(request, response);
+  } catch (error) {
+    const cache = await caches.open(CACHE_NAME);
+    return (await cache.match(request)) || (fallback ? await cache.match(fallback) : undefined) || Response.error();
+  }
+}
+
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cached = await cache.match(request);
+  const network = fetch(request).then((response) => cacheResponse(request, response)).catch(() => undefined);
+  return cached || network || Response.error();
+}
+
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
+
+  const isDocument = request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html';
+  const isTranslation = url.pathname.startsWith('/i18n/');
+
+  if (isDocument) {
+    event.respondWith(networkFirst(request, '/index.html'));
+    return;
+  }
+
+  if (isTranslation) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  event.respondWith(staleWhileRevalidate(request));
 });
