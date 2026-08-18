@@ -1,80 +1,79 @@
 # fomin-developer
 
-**Live site:** [fomin-developer.pages.dev](https://fomin-developer.pages.dev)
+**Live site:** [fomin-developer.pages.dev](https://fomin-developer.pages.dev/)
 
-A single-page portfolio site for a freelance developer specializing in Telegram bots and business websites. Built from scratch with plain HTML/CSS/JS — no frameworks, no build-heavy tooling — and optimized to load fast and feel polished on both desktop and mobile.
+A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
 
 ![Portfolio preview](docs/preview-hero.jpg)
 
-## About this project
+## What the site provides
 
-This site is my professional portfolio: it presents my services, pricing, a business-results section, and case studies of real client work (a Telegram bot for a flower shop, a bar website, and a catalog site for a modular-housing company). I designed, coded, and deployed every part of it myself — copy, layout, animation, and infrastructure.
+The site presents services, starting prices, three client case studies and direct contact channels. It supports Russian, English and Ukrainian UI text. The first screen and core content remain visible without animation or JavaScript; JavaScript progressively enhances language selection, the mobile menu, galleries and other interactions.
 
-I'm sharing it here as a work sample: it demonstrates my approach to front-end engineering (semantic markup, custom animation without heavy dependencies, a from-scratch i18n system, and an automated asset pipeline) as well as product thinking (pricing structure, case-study writing, conversion-oriented layout).
-
-## Features
-
-- **Business-results section** — a proof-of-value band between Services and Pricing that translates technical features into outcomes a client cares about (24/7 order automation, real measured load time, instant lead notifications, multi-language reach), plus a short "Результат" callout inside every case study.
-- **Custom cursor & particle background** — a lightweight canvas-based particle field with proximity connections, plus a magnetic-button and 3D tilt-card interaction layer, all written in vanilla JS.
-- **Scroll-driven animation** — GSAP + ScrollTrigger for parallax on the hero section, combined with a native `IntersectionObserver` reveal system for content sections (with a `prefers-reduced-motion` fallback that disables all animation).
-- **Three-language i18n from scratch** — RU / EN / UA switching via a small `data-i18n` attribute system and a JSON dictionary per language, fetched on demand and cached, with the default language persisted in `localStorage`.
-- **Draggable, responsive case-study galleries** — horizontal scroll-snap image galleries per project, with mouse-drag support on desktop and native touch scroll on mobile.
-- **Automated image pipeline** — a Node build script generates WebP versions of every JPEG and minifies CSS/JS, so the repo's source files stay readable while the deployed site serves optimized assets.
-- **Offline-friendly** — a service worker caches the app shell for repeat visits.
-- **Accessibility basics** — skip-to-content link, `aria-pressed`/`aria-expanded` state on interactive controls, and reduced-motion support throughout.
-
-## Tech stack
-
-| Layer | Choice |
+| Area | Implementation |
 |---|---|
-| Markup / styling | Semantic HTML5, hand-written CSS (custom properties, Grid/Flexbox, no framework) |
-| Animation | [GSAP](https://gsap.com/) + ScrollTrigger, native `IntersectionObserver` |
-| Interactivity | Vanilla JavaScript (ES6+, no framework) |
-| i18n | Custom `data-i18n` + JSON dictionaries, no library |
-| Build tooling | Node.js script using `clean-css-cli`, `terser`, and `sharp` |
-| Hosting | Cloudflare Pages (static hosting, auto-deploy from this repo) |
+| Markup and styles | Semantic HTML5, custom CSS properties, Grid and Flexbox |
+| Interactivity | Vanilla JavaScript and native browser APIs |
+| Localisation | `data-i18n`, `data-i18n-aria-label` and `data-i18n-alt` attributes with JSON dictionaries for `ru`, `en` and `uk` |
+| Images | JPEG fallback plus generated WebP sources, including responsive variants |
+| Offline behaviour | Versioned service worker; HTML and language dictionaries are network-first to reduce stale UI risk |
+| Deployment | Cloudflare Pages static hosting |
+
+## Accessibility and reliability
+
+The project includes a skip link, a high-visibility `:focus-visible` style, a keyboard-accessible mobile menu with Escape support and focus containment, gallery buttons with arrow-key navigation, image alternative-text localisation, reduced-motion handling and clearly visible content without a preloader. Interactive motion is limited to capable devices and pauses when the page is not visible.
+
+The Ukrainian language resource uses the standard `uk` code. The displayed language option remains `UA` for visitors, while the document's `lang` attribute is updated to `uk` for browsers and assistive technology.
 
 ## Project structure
 
-```
-index.html                 page markup (source of truth for content)
-css/style.css               source stylesheet
-css/style.min.css           minified build output (generated, do not edit by hand)
-js/main.js                  source script
-js/main_min.js               minified build output (generated, do not edit by hand)
-i18n/ru.json, en.json, ua.json   translation dictionaries, loaded via fetch on language switch
-assets/                      images (original .jpg + generated .webp)
-docs/                        README assets (screenshots)
-sw.js                        service worker for offline caching
-scripts/build.js             build script: CSS/JS minification + WebP generation
-robots.txt, sitemap.xml      SEO
-_headers                     Cloudflare Pages cache-control headers
+```text
+index.html                  Page markup and default Russian content
+css/style.css               Readable source stylesheet
+css/style.min.css           Generated minified stylesheet
+js/main.js                  Readable source script
+js/main_min.js              Generated minified script
+i18n/ru.json                Russian dictionary
+i18n/en.json                English dictionary
+i18n/uk.json                Ukrainian dictionary
+assets/                     JPEG originals and generated WebP assets
+scripts/build.js            CSS/JS minification and responsive WebP generation
+scripts/check.js            Static quality checks
+sw.js                       Service worker
+_headers                    Cloudflare Pages security and cache headers
+robots.txt, sitemap.xml     Search crawler directives
 ```
 
-## Getting started
+## Local development
+
+Install dependencies once, then build and serve the project over HTTP. Opening `index.html` as `file://` is not supported because the language dictionaries are fetched at runtime.
 
 ```bash
-npm install
-npm run build          # generates css/style.min.css, js/main_min.js, assets/*.webp
-npx serve .             # or any static file server — i18n uses fetch(), so file:// won't work
+npm ci
+npm run build
+npm run check
+npx serve .
 ```
 
-Then open the printed local URL in your browser.
+## Quality gate
 
-## Making changes
-
-Edit the source files only — `index.html`, `css/style.css`, `js/main.js`, and the `i18n/*.json` dictionaries. After changing any CSS/JS or adding new images to `assets/`, rebuild the generated files:
+Run the following commands before committing or deploying changes:
 
 ```bash
 npm run build
+npm run test
 ```
 
-This regenerates `css/style.min.css`, `js/main_min.js`, and a `.webp` copy of every `.jpg` in `assets/`.
+The build minifies CSS and JavaScript and regenerates full-size plus responsive WebP variants from every JPEG source. The test command checks that every translation attribute in the page has a non-empty value in all three dictionaries, confirms the use of `uk`, and verifies that every referenced asset exists.
+
+## Making changes
+
+Edit source files only: `index.html`, `css/style.css`, `js/main.js`, the dictionaries in `i18n/`, and original JPEG files in `assets/`. Do not edit `css/style.min.css`, `js/main_min.js` or generated `*-320.webp`, `*-480.webp` and `*-960.webp` files by hand; regenerate them with `npm run build`.
+
+The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
 
 ## Deployment
 
-The site auto-deploys to [Cloudflare Pages](https://pages.cloudflare.com/) on every push to `main`. Cloudflare builds and serves the repository directly — no CI config needed beyond the Pages project settings (build command: `npm run build`, output directory: `/`).
-
----
+Cloudflare Pages deploys the repository automatically when the configured production branch receives a new commit. The expected build command is `npm run build` and the output directory is the repository root.
 
 © 2026 Nikita Fomin

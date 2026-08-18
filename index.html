@@ -7,6 +7,7 @@
 <meta name="description" content="fomin-developer — разработка Telegram-ботов и сайтов под ключ. Портфолио, кейсы, контакты.">
 <link rel="canonical" href="https://fomin-developer.pages.dev/">
 <meta name="theme-color" content="#1b0509">
+<meta name="robots" content="index,follow">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fomin-developer.pages.dev/">
@@ -31,7 +32,7 @@
 
 <link rel="stylesheet" href="css/style.min.css">
 
-<script type="application/ld+json">
+<script id="structuredData" type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -55,25 +56,16 @@
 
 <div class="grain"></div>
 <canvas id="particleCanvas" class="particle-canvas"></canvas>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<div class="preloader" id="preloader">
-  <picture>
-    <source srcset="assets/logo.webp" type="image/webp">
-    <img src="assets/logo.jpg" alt="" class="preloader-mark" width="900" height="663">
-  </picture>
-</div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <a href="#top" class="nav-mark">
     <picture>
-      <source srcset="assets/logo.webp" type="image/webp">
+      <source srcset="assets/logo-96.webp 96w, assets/logo-192.webp 192w, assets/logo.webp 900w" sizes="34px" type="image/webp">
       <img src="assets/logo.jpg" alt="Nikita Fomin" width="900" height="663">
     </picture>
   </a>
-  <nav class="nav-links">
+  <nav class="nav-links" aria-label="Основная навигация">
     <a href="#about" data-nav data-i18n="nav_about">Обо мне</a>
     <a href="#services" data-nav data-i18n="nav_services">Услуги</a>
     <a href="#pricing" data-nav data-i18n="nav_pricing">Цены</a>
@@ -83,15 +75,15 @@
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="ru" aria-pressed="true">RU</button>
     <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-    <button class="lang-btn" data-lang="ua" aria-pressed="false">UA</button>
+    <button class="lang-btn" data-lang="uk" aria-pressed="false">UA</button>
   </div>
   <a href="https://t.me/fomin_developer" target="_blank" rel="noopener" class="nav-cta" data-i18n="nav_cta">Написать</a>
-  <button class="nav-burger" id="navBurger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+  <button class="nav-burger" id="navBurger" aria-label="Открыть меню" data-i18n-aria-label="nav_menu_label" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span>
   </button>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#about" data-nav data-i18n="nav_about">Обо мне</a>
   <a href="#services" data-nav data-i18n="nav_services">Услуги</a>
   <a href="#pricing" data-nav data-i18n="nav_pricing">Цены</a>
@@ -119,13 +111,13 @@
     <p class="eyebrow reveal-up" data-i18n="hero_eyebrow">IT&nbsp;·&nbsp;Telegram-боты&nbsp;·&nbsp;Сайты</p>
     <div class="hero-mark reveal-scale">
       <picture>
-        <source srcset="assets/logo.webp" type="image/webp">
+        <source srcset="assets/logo-96.webp 96w, assets/logo-192.webp 192w, assets/logo.webp 900w" sizes="(max-width: 480px) 68px, 88px" type="image/webp">
         <img src="assets/logo.jpg" alt="Fomin logomark" width="900" height="663">
       </picture>
     </div>
     <h1 class="hero-title">
-      <span class="reveal-up hero-title-cursive" style="--d:0.05s">Фомин</span>
-      <span class="reveal-up" style="--d:0.15s">Никита</span>
+      <span class="reveal-up hero-title-cursive" style="--d:0.05s" data-i18n="hero_last_name">Фомин</span>
+      <span class="reveal-up" style="--d:0.15s" data-i18n="hero_first_name">Никита</span>
     </h1>
     <p class="hero-sub reveal-up" style="--d:0.28s" data-i18n="hero_sub">
       Делаю Telegram-ботов и сайты, которые не просто существуют —
@@ -262,8 +254,8 @@
         <span class="value-label" data-i18n="value_item2">Именно столько грузятся мои сайты — за это время посетитель не успевает уйти к конкуренту.</span>
       </div>
       <div class="value-item reveal-up">
-        <span class="value-num">0</span>
-        <span class="value-label" data-i18n="value_item3">Пропущенных заявок — каждый заказ и сообщение приходит вам мгновенно в Telegram или WhatsApp.</span>
+        <span class="value-num" data-i18n="value_num3">24/7</span>
+        <span class="value-label" data-i18n="value_item3">Уведомления о заявках и заказах приходят в выбранный мессенджер — вы быстрее реагируете на клиента.</span>
       </div>
       <div class="value-item reveal-up">
         <span class="value-num">3</span>
@@ -346,6 +338,8 @@
       </div>
     </div>
 
+    <p class="pricing-scope reveal-up" data-i18n="pricing_scope">Базовая цена подходит для небольшого проекта. Интеграции, нестандартная логика, хостинг и дальнейшее сопровождение рассчитываются после короткого брифа.</p>
+
     <div class="pricing-notes">
       <div class="pricing-note reveal-up">
         <div class="pricing-note-icon" aria-hidden="true">
@@ -423,39 +417,46 @@
       </div>
       <div class="case-hero-shot reveal-scale">
         <picture>
-          <source srcset="assets/floressa-4.webp" type="image/webp">
-          <img src="assets/floressa-4.jpg" alt="Уведомление о новом заказе FLORESSA" width="640" height="1422" loading="lazy">
+          <source srcset="assets/floressa-4-320.webp 320w, assets/floressa-4.webp 640w" sizes="(max-width: 860px) 220px, 320px" type="image/webp">
+          <img src="assets/floressa-4.jpg" alt="Уведомление о новом заказе FLORESSA" data-i18n-alt="alt_floressa_hero" width="640" height="1422" loading="lazy">
         </picture>
       </div>
     </div>
 
     <div class="case-gallery-wrap">
-      <div class="case-gallery" id="caseGallery">
+      <div class="case-gallery-tools section-inner">
+        <p class="gallery-hint" data-i18n="gallery_hint">Используйте кнопки или стрелки клавиатуры, чтобы листать скриншоты.</p>
+        <div class="gallery-controls" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery" data-direction="previous" aria-label="Предыдущие скриншоты" data-i18n-aria-label="gallery_previous"><span aria-hidden="true">←</span></button>
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery" data-direction="next" aria-label="Следующие скриншоты" data-i18n-aria-label="gallery_next"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div class="case-gallery" id="caseGallery" data-gallery tabindex="0" role="region" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
         <figure class="frame">
           <picture>
-            <source srcset="assets/floressa-1.webp" type="image/webp">
-            <img src="assets/floressa-1.jpg" alt="Главное меню бота FLORESSA" loading="lazy" width="640" height="1422">
+            <source srcset="assets/floressa-1-320.webp 320w, assets/floressa-1.webp 640w" sizes="(max-width: 560px) 190px, 230px" type="image/webp">
+            <img src="assets/floressa-1.jpg" alt="Главное меню бота FLORESSA" data-i18n-alt="alt_floressa_1" loading="lazy" width="640" height="1422">
           </picture>
           <figcaption data-i18n="case_floressa_figcaption1">Главное меню</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/floressa-2.webp" type="image/webp">
-            <img src="assets/floressa-2.jpg" alt="Каталог композиций" loading="lazy" width="640" height="1422">
+            <source srcset="assets/floressa-2-320.webp 320w, assets/floressa-2.webp 640w" sizes="(max-width: 560px) 190px, 230px" type="image/webp">
+            <img src="assets/floressa-2.jpg" alt="Каталог композиций" data-i18n-alt="alt_floressa_2" loading="lazy" width="640" height="1422">
           </picture>
           <figcaption data-i18n="case_floressa_figcaption2">Каталог</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/floressa-3.webp" type="image/webp">
-            <img src="assets/floressa-3.jpg" alt="Корзина заказа" loading="lazy" width="640" height="1422">
+            <source srcset="assets/floressa-3-320.webp 320w, assets/floressa-3.webp 640w" sizes="(max-width: 560px) 190px, 230px" type="image/webp">
+            <img src="assets/floressa-3.jpg" alt="Корзина заказа" data-i18n-alt="alt_floressa_3" loading="lazy" width="640" height="1422">
           </picture>
           <figcaption data-i18n="case_floressa_figcaption3">Корзина</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/floressa-5.webp" type="image/webp">
-            <img src="assets/floressa-5.jpg" alt="Профиль бота FLORESSA" loading="lazy" width="640" height="1422">
+            <source srcset="assets/floressa-5-320.webp 320w, assets/floressa-5.webp 640w" sizes="(max-width: 560px) 190px, 230px" type="image/webp">
+            <img src="assets/floressa-5.jpg" alt="Профиль бота FLORESSA" data-i18n-alt="alt_floressa_4" loading="lazy" width="640" height="1422">
           </picture>
           <figcaption data-i18n="case_floressa_figcaption4">Профиль бота</figcaption>
         </figure>
@@ -502,53 +503,60 @@
       </div>
       <div class="case-hero-shot wide reveal-scale">
         <picture>
-          <source srcset="assets/wave_beer.webp" type="image/webp">
-          <img src="assets/wave_beer.jpg" alt="Главный экран сайта Wave Beer" width="1554" height="784" loading="lazy">
+          <source srcset="assets/wave_beer-480.webp 480w, assets/wave_beer-960.webp 960w, assets/wave_beer.webp 1554w" sizes="(max-width: 860px) 360px, 480px" type="image/webp">
+          <img src="assets/wave_beer.jpg" alt="Главный экран сайта Wave Beer" data-i18n-alt="alt_wave_hero" width="1554" height="784" loading="lazy">
         </picture>
       </div>
     </div>
 
     <div class="case-gallery-wrap">
-      <div class="case-gallery" id="caseGallery2">
+      <div class="case-gallery-tools section-inner">
+        <p class="gallery-hint" data-i18n="gallery_hint">Используйте кнопки или стрелки клавиатуры, чтобы листать скриншоты.</p>
+        <div class="gallery-controls" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery2" data-direction="previous" aria-label="Предыдущие скриншоты" data-i18n-aria-label="gallery_previous"><span aria-hidden="true">←</span></button>
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery2" data-direction="next" aria-label="Следующие скриншоты" data-i18n-aria-label="gallery_next"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div class="case-gallery" id="caseGallery2" data-gallery tabindex="0" role="region" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
         <figure class="frame">
           <picture>
-            <source srcset="assets/wave_beer.webp" type="image/webp">
-            <img src="assets/wave_beer.jpg" alt="Главный экран сайта Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/wave_beer-480.webp 480w, assets/wave_beer-960.webp 960w, assets/wave_beer.webp 1554w" sizes="(max-width: 860px) 360px, 480px" type="image/webp">
+            <img src="assets/wave_beer.jpg" alt="Главный экран сайта Wave Beer" data-i18n-alt="alt_wave_hero" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption1">О заведении</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/photo_2026-07-09_16-56-30.webp" type="image/webp">
-            <img src="assets/photo_2026-07-09_16-56-30.jpg" alt="Меню Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/photo_2026-07-09_16-56-30-480.webp 480w, assets/photo_2026-07-09_16-56-30-960.webp 960w, assets/photo_2026-07-09_16-56-30.webp 1554w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/photo_2026-07-09_16-56-30.jpg" alt="Меню Wave Beer" data-i18n-alt="alt_wave_2" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption2">Меню</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/photo_2026-07-11_12-08-47.webp" type="image/webp">
-            <img src="assets/photo_2026-07-11_12-08-47.jpg" alt="Галерея атмосферы Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/photo_2026-07-11_12-08-47-480.webp 480w, assets/photo_2026-07-11_12-08-47-960.webp 960w, assets/photo_2026-07-11_12-08-47.webp 1554w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/photo_2026-07-11_12-08-47.jpg" alt="Галерея атмосферы Wave Beer" data-i18n-alt="alt_wave_3" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption3">Атмосфера</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/photo_2026-07-09_16-56-20.webp" type="image/webp">
-            <img src="assets/photo_2026-07-09_16-56-20.jpg" alt="Форма заказа Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/photo_2026-07-09_16-56-20-480.webp 480w, assets/photo_2026-07-09_16-56-20-960.webp 960w, assets/photo_2026-07-09_16-56-20.webp 1554w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/photo_2026-07-09_16-56-20.jpg" alt="Форма заказа Wave Beer" data-i18n-alt="alt_wave_4" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption4">Оформление заказа</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/photo_2026-07-11_12-08-44.webp" type="image/webp">
-            <img src="assets/photo_2026-07-11_12-08-44.jpg" alt="Отзывы гостей Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/photo_2026-07-11_12-08-44-480.webp 480w, assets/photo_2026-07-11_12-08-44-960.webp 960w, assets/photo_2026-07-11_12-08-44.webp 1554w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/photo_2026-07-11_12-08-44.jpg" alt="Отзывы гостей Wave Beer" data-i18n-alt="alt_wave_5" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption5">Отзывы</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/photo_2026-07-09_16-56-27.webp" type="image/webp">
-            <img src="assets/photo_2026-07-09_16-56-27.jpg" alt="Карта проезда Wave Beer" loading="lazy" width="1554" height="784">
+            <source srcset="assets/photo_2026-07-09_16-56-27-480.webp 480w, assets/photo_2026-07-09_16-56-27-960.webp 960w, assets/photo_2026-07-09_16-56-27.webp 1554w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/photo_2026-07-09_16-56-27.jpg" alt="Карта проезда Wave Beer" data-i18n-alt="alt_wave_6" loading="lazy" width="1554" height="784">
           </picture>
           <figcaption data-i18n="case_wave_figcaption6">Как добраться</figcaption>
         </figure>
@@ -590,53 +598,60 @@
       </div>
       <div class="case-hero-shot wide reveal-scale">
         <picture>
-          <source srcset="assets/module-house-hero.webp" type="image/webp">
-          <img src="assets/module-house-hero.jpg" alt="Главный экран сайта Module House" width="1519" height="784" loading="lazy">
+          <source srcset="assets/module-house-hero-480.webp 480w, assets/module-house-hero-960.webp 960w, assets/module-house-hero.webp 1519w" sizes="(max-width: 860px) 360px, 480px" type="image/webp">
+          <img src="assets/module-house-hero.jpg" alt="Главный экран сайта Module House" data-i18n-alt="alt_modulehouse_hero" width="1519" height="784" loading="lazy">
         </picture>
       </div>
     </div>
 
     <div class="case-gallery-wrap">
-      <div class="case-gallery" id="caseGallery3">
+      <div class="case-gallery-tools section-inner">
+        <p class="gallery-hint" data-i18n="gallery_hint">Используйте кнопки или стрелки клавиатуры, чтобы листать скриншоты.</p>
+        <div class="gallery-controls" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery3" data-direction="previous" aria-label="Предыдущие скриншоты" data-i18n-aria-label="gallery_previous"><span aria-hidden="true">←</span></button>
+          <button class="gallery-control" type="button" data-gallery-control="caseGallery3" data-direction="next" aria-label="Следующие скриншоты" data-i18n-aria-label="gallery_next"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <div class="case-gallery" id="caseGallery3" data-gallery tabindex="0" role="region" aria-label="Галерея проекта" data-i18n-aria-label="gallery_label">
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-catalog.webp" type="image/webp">
-            <img src="assets/module-house-catalog.jpg" alt="Каталог и фильтры Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-catalog-480.webp 480w, assets/module-house-catalog-960.webp 960w, assets/module-house-catalog.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-catalog.jpg" alt="Каталог и фильтры Module House" data-i18n-alt="alt_modulehouse_1" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption1">Каталог и фильтры</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-gallery.webp" type="image/webp">
-            <img src="assets/module-house-gallery.jpg" alt="Производство и качество Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-gallery-480.webp 480w, assets/module-house-gallery-960.webp 960w, assets/module-house-gallery.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-gallery.jpg" alt="Производство и качество Module House" data-i18n-alt="alt_modulehouse_2" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption2">Производство и качество</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-features.webp" type="image/webp">
-            <img src="assets/module-house-features.jpg" alt="Преимущества домов Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-features-480.webp 480w, assets/module-house-features-960.webp 960w, assets/module-house-features.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-features.jpg" alt="Преимущества домов Module House" data-i18n-alt="alt_modulehouse_3" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption3">Преимущества домов</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-about.webp" type="image/webp">
-            <img src="assets/module-house-about.jpg" alt="О компании Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-about-480.webp 480w, assets/module-house-about-960.webp 960w, assets/module-house-about.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-about.jpg" alt="О компании Module House" data-i18n-alt="alt_modulehouse_4" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption4">О компании</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-delivery.webp" type="image/webp">
-            <img src="assets/module-house-delivery.jpg" alt="Доставка и шаги покупки Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-delivery-480.webp 480w, assets/module-house-delivery-960.webp 960w, assets/module-house-delivery.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-delivery.jpg" alt="Доставка и шаги покупки Module House" data-i18n-alt="alt_modulehouse_5" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption5">Доставка и шаги покупки</figcaption>
         </figure>
         <figure class="frame">
           <picture>
-            <source srcset="assets/module-house-contact.webp" type="image/webp">
-            <img src="assets/module-house-contact.jpg" alt="Контакты Module House" loading="lazy" width="1519" height="784">
+            <source srcset="assets/module-house-contact-480.webp 480w, assets/module-house-contact-960.webp 960w, assets/module-house-contact.webp 1519w" sizes="(max-width: 560px) 230px, 320px" type="image/webp">
+            <img src="assets/module-house-contact.jpg" alt="Контакты Module House" data-i18n-alt="alt_modulehouse_6" loading="lazy" width="1519" height="784">
           </picture>
           <figcaption data-i18n="case_modulehouse_figcaption6">Контакты</figcaption>
         </figure>
@@ -694,7 +709,7 @@
 
 <footer class="footer">
   <picture>
-    <source srcset="assets/logo.webp" type="image/webp">
+    <source srcset="assets/logo-96.webp 96w, assets/logo-192.webp 192w, assets/logo.webp 900w" sizes="28px" type="image/webp">
     <img src="assets/logo.jpg" alt="" class="footer-mark" width="900" height="663" loading="lazy">
   </picture>
   <p data-i18n="footer_copyright">© 2026 Никита Фомин · fomin-developer</p>
@@ -704,14 +719,12 @@
   </div>
 </footer>
 
-<button class="to-top" id="toTop" aria-label="Наверх">
+<button class="to-top" id="toTop" aria-label="Наверх" data-i18n-aria-label="to_top_label">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
 <script src="js/main_min.js"></script>
 </body>
 </html>
