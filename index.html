@@ -70,6 +70,7 @@
     <a href="#services" data-nav data-i18n="nav_services">Услуги</a>
     <a href="#pricing" data-nav data-i18n="nav_pricing">Цены</a>
     <a href="#work" data-nav data-i18n="nav_portfolio">Портфолио</a>
+    <a href="#open-source" data-nav data-i18n="nav_open_source">Open source</a>
     <a href="#contact" data-nav data-i18n="nav_contact">Контакты</a>
   </nav>
   <div class="lang-switcher">
@@ -88,6 +89,7 @@
   <a href="#services" data-nav data-i18n="nav_services">Услуги</a>
   <a href="#pricing" data-nav data-i18n="nav_pricing">Цены</a>
   <a href="#work" data-nav data-i18n="nav_portfolio">Портфолио</a>
+  <a href="#open-source" data-nav data-i18n="nav_open_source">Open source</a>
   <a href="#contact" data-nav data-i18n="nav_contact">Контакты</a>
   <a href="https://t.me/fomin_developer" target="_blank" rel="noopener" class="mobile-cta" data-i18n="hero_btn_primary">Написать в Telegram</a>
 </div>
@@ -658,6 +660,38 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============ OPEN SOURCE ============ -->
+<section class="open-source" id="open-source">
+  <div class="section-inner open-source-grid">
+    <div class="open-source-copy">
+      <p class="eyebrow reveal-up" data-i18n="opensource_eyebrow">05 — Open source</p>
+      <h2 class="section-title reveal-up" data-i18n="opensource_title">Временная почта. <em>На твоей скорости.</em></h2>
+      <p class="open-source-lead reveal-up" data-i18n="opensource_lead">Консольный создатель временных email-адресов: до 1000 адресов через GuerrillaMail и Tempmail, параллельные запросы и готовый экспорт в TXT.</p>
+      <div class="open-source-actions reveal-up">
+        <a class="btn btn-neon" href="create_emails.py" download><span data-i18n="opensource_download">Скачать create_emails.py</span><span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="GUIDE_TEMP_EMAILS.md" target="_blank" rel="noopener"><span data-i18n="opensource_guide">Открыть гайд</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="open-source-meta reveal-up">
+        <span><b>01</b> Python 3.10+</span><span><b>02</b> 0 dependencies</span><span><b>03</b> max 1000</span>
+      </div>
+    </div>
+    <div class="product-terminal reveal-scale" aria-label="Пример запуска продукта">
+      <div class="product-terminal-top"><span><i></i><i></i><i></i></span><small>fomin@opensource / zsh</small><b>● live</b></div>
+      <div class="product-terminal-body">
+        <p class="terminal-comment"># generate a clean batch</p>
+        <p><span class="terminal-prompt">$</span> python3 create_emails.py \</p>
+        <p class="terminal-indent">--provider both --count 1000 \</p>
+        <p class="terminal-indent">--workers 16 --output emails.txt</p>
+        <div class="terminal-progress"><span></span></div>
+        <p class="terminal-success"><span>✓</span> 1000 addresses ready <strong>05.02s</strong></p>
+        <p class="terminal-faded">saved → ./emails.txt</p>
+      </div>
+      <div class="terminal-orbit orbit-one"></div><div class="terminal-orbit orbit-two"></div>
+    </div>
+  </div>
+  <div class="section-inner product-note reveal-up"><span>///</span><p data-i18n="opensource_note">Для тестов, разработки и легитимных приватных сценариев. Не используй для спама, обхода лимитов или массовых регистраций.</p></div>
 </section>
 
 <!-- ============ CONTACT ============ -->

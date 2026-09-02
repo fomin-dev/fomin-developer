@@ -4,6 +4,7 @@
   "nav_pricing": "Цены",
   "nav_portfolio": "Портфолио",
   "nav_contact": "Контакты",
+  "nav_open_source": "Open source",
   "nav_cta": "Написать",
   "skip_link": "Перейти к содержимому",
   "hero_eyebrow": "IT · Telegram-боты · Сайты",
@@ -167,5 +168,11 @@
   "alt_modulehouse_3": "Преимущества домов Module House",
   "alt_modulehouse_4": "О компании Module House",
   "alt_modulehouse_5": "Доставка и шаги покупки Module House",
-  "alt_modulehouse_6": "Контакты Module House"
+  "alt_modulehouse_6": "Контакты Module House",
+  "opensource_eyebrow": "05 — Open source",
+  "opensource_title": "Временная почта. <em>На твоей скорости.</em>",
+  "opensource_lead": "Консольный создатель временных email-адресов: до 1000 адресов через GuerrillaMail и Tempmail, параллельные запросы и готовый экспорт в TXT.",
+  "opensource_download": "Скачать create_emails.py",
+  "opensource_guide": "Открыть гайд",
+  "opensource_note": "Для тестов, разработки и легитимных приватных сценариев. Не используй для спама, обхода лимитов или массовых регистраций."
 }

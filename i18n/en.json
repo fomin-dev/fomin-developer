@@ -4,6 +4,7 @@
   "nav_pricing": "Pricing",
   "nav_portfolio": "Portfolio",
   "nav_contact": "Contact",
+  "nav_open_source": "Open source",
   "nav_cta": "Write",
   "skip_link": "Skip to content",
   "hero_eyebrow": "IT · Telegram bots · Websites",
@@ -167,5 +168,11 @@
   "alt_modulehouse_3": "Module House building benefits",
   "alt_modulehouse_4": "About Module House",
   "alt_modulehouse_5": "Module House delivery and purchase steps",
-  "alt_modulehouse_6": "Module House contact details"
+  "alt_modulehouse_6": "Module House contact details",
+  "opensource_eyebrow": "05 — Open source",
+  "opensource_title": "Temporary email. <em>At your speed.</em>",
+  "opensource_lead": "A CLI tool for creating temporary email addresses: up to 1,000 addresses through GuerrillaMail and Tempmail, parallel requests and ready-to-use TXT export.",
+  "opensource_download": "Download create_emails.py",
+  "opensource_guide": "Open the guide",
+  "opensource_note": "For testing, development and legitimate privacy-focused scenarios. Do not use it for spam, limit bypassing or mass registrations."
 }

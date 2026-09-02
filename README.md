@@ -8,7 +8,11 @@ A responsive, multilingual portfolio website for a freelance developer specialis
 
 ## What the site provides
 
-The site presents services, starting prices, three client case studies and direct contact channels. It supports Russian, English and Ukrainian UI text. The first screen and core content remain visible without animation or JavaScript; JavaScript progressively enhances language selection, the mobile menu, galleries and other interactions.
+The site presents services, starting prices, three client case studies, an open-source temporary email creator and direct contact channels. It supports Russian, English and Ukrainian UI text. The first screen and core content remain visible without animation or JavaScript; JavaScript progressively enhances language selection, the mobile menu, galleries and other interactions.
+
+## Open-source product
+
+The site includes [`create_emails.py`](create_emails.py), a dependency-free Python CLI for creating temporary email addresses through GuerrillaMail and Tempmail. The complete setup guide, command reference, examples and responsible-use notes are available in [`GUIDE_TEMP_EMAILS.md`](GUIDE_TEMP_EMAILS.md).
 
 | Area | Implementation |
 |---|---|
@@ -39,6 +43,8 @@ i18n/uk.json                Ukrainian dictionary
 assets/                     JPEG originals and generated WebP assets
 scripts/build.js            CSS/JS minification and responsive WebP generation
 scripts/check.js            Static quality checks
+create_emails.py            Temporary email creator CLI
+GUIDE_TEMP_EMAILS.md        Product setup and usage guide
 sw.js                       Service worker
 _headers                    Cloudflare Pages security and cache headers
 robots.txt, sitemap.xml     Search crawler directives
