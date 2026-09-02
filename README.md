@@ -2,13 +2,13 @@
 
 **Live site:** [fomin-developer.pages.dev](https://fomin-developer.pages.dev/)
 
-A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
+A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The experience is presented as Fomin OS: an Ubuntu/macOS-inspired desktop shell that opens a portfolio app with editorial case studies, services, pricing, contact channels and an open-source utility. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
 
 ![Portfolio preview](docs/preview-hero.jpg)
 
 ## What the site provides
 
-The site presents services, starting prices, three client case studies, an open-source temporary email creator and direct contact channels. It supports Russian, English and Ukrainian UI text. The first screen and core content remain visible without animation or JavaScript; JavaScript progressively enhances language selection, the mobile menu, galleries and other interactions.
+The site presents services, starting prices, three client case studies, an open-source temporary email creator and direct contact channels inside the Fomin portfolio app. It supports Russian, English and Ukrainian UI text. The desktop shell includes a system bar, wallpaper, desktop icons, dock, window controls, workspace navigation, animated view transitions and case-study modals. The content remains accessible without relying on the visual effects; JavaScript progressively enhances language selection, app controls, keyboard shortcuts, workspace navigation and modal interactions.
 
 ## Open-source product
 
@@ -17,7 +17,7 @@ The site includes [`create_emails.py`](create_emails.py), a dependency-free Pyth
 | Area | Implementation |
 |---|---|
 | Markup and styles | Semantic HTML5, custom CSS properties, Grid and Flexbox |
-| Interactivity | Vanilla JavaScript and native browser APIs |
+| Interactivity | Vanilla JavaScript and native browser APIs: desktop shell, app window, dock, keyboard shortcuts, parallax, view transitions and case modals |
 | Localisation | `data-i18n`, `data-i18n-aria-label` and `data-i18n-alt` attributes with JSON dictionaries for `ru`, `en` and `uk` |
 | Images | JPEG fallback plus generated WebP sources, including responsive variants |
 | Offline behaviour | Versioned service worker; HTML and language dictionaries are network-first to reduce stale UI risk |
@@ -32,10 +32,10 @@ The Ukrainian language resource uses the standard `uk` code. The displayed langu
 ## Project structure
 
 ```text
-index.html                  Page markup and default Russian content
-css/style.css               Readable source stylesheet
+index.html                  Fomin OS shell, app window and default Russian content
+css/style.css               Readable Fomin OS / app / responsive stylesheet
 css/style.min.css           Generated minified stylesheet
-js/main.js                  Readable source script
+js/main.js                  Desktop controls, views, localization and case-modal logic
 js/main_min.js              Generated minified script
 i18n/ru.json                Russian dictionary
 i18n/en.json                English dictionary
@@ -76,7 +76,7 @@ The build minifies CSS and JavaScript and regenerates full-size plus responsive 
 
 Edit source files only: `index.html`, `css/style.css`, `js/main.js`, the dictionaries in `i18n/`, and original JPEG files in `assets/`. Do not edit `css/style.min.css`, `js/main_min.js` or generated `*-320.webp`, `*-480.webp` and `*-960.webp` files by hand; regenerate them with `npm run build`.
 
-The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
+The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The current shell uses `fomin-portfolio-v8-desktop`. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
 
 ## Deployment
 
