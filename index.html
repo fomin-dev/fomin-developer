@@ -59,7 +59,7 @@
     </header>
 
     <main class="desktop-stage" id="appMain">
-      <div class="desktop-copy" aria-hidden="true"><span class="desktop-kicker">EST. 2026 / ODESA</span><h1>Make useful<br><em>things.</em></h1><p>an interactive portfolio<br>by Nikita Fomin</p></div>
+      <div class="desktop-copy" aria-hidden="true"><span class="desktop-kicker">EST. 2026 / ODESA</span><h1>Make useful<br><em>things.</em></h1><p data-i18n="desktop_tagline">an interactive portfolio<br>by Nikita Fomin</p></div>
       <div class="desktop-orbit orbit-large"></div><div class="desktop-orbit orbit-small"></div>
 
       <div class="desktop-icons" aria-label="Desktop apps">
@@ -71,12 +71,12 @@
       <section class="app-window" id="fominWindow" aria-label="Fomin portfolio application" aria-hidden="false">
         <div class="window-chrome">
           <div class="window-controls"><button class="window-dot close" id="closeApp" aria-label="Close app"></button><button class="window-dot minimize" id="minimizeApp" aria-label="Minimize app"></button><button class="window-dot maximize" id="maximizeApp" aria-label="Maximize app"></button></div>
-          <div class="window-title"><span class="window-title-mark">F</span><span>fomin — portfolio</span><span class="window-live">live / 2026</span></div>
+          <div class="window-title"><span class="window-title-mark">F</span><span>fomin — portfolio</span><span class="window-live" data-i18n="window_live">live / 2026</span></div>
           <div class="window-tools"><button id="windowMenu" aria-label="App menu">•••</button></div>
         </div>
         <div class="app-body">
           <aside class="app-sidebar">
-            <div class="sidebar-profile"><div class="profile-avatar">NF</div><div><strong>Nikita Fomin</strong><span>independent developer</span></div></div>
+            <div class="sidebar-profile"><div class="profile-avatar">NF</div><div><strong data-i18n="profile_name">Nikita Fomin</strong><span data-i18n="profile_role">independent developer</span></div></div>
             <nav class="app-nav" aria-label="Fomin app navigation">
               <button class="app-nav-item active" data-view="home"><span>⌂</span><b data-i18n="dock_home">Home</b></button>
               <button class="app-nav-item" data-view="about"><span>◌</span><b data-i18n="dock_about">About</b></button>
@@ -90,8 +90,8 @@
 
           <div class="app-content" id="appContent">
             <section class="app-view active" data-view-panel="home">
-              <div class="view-topline"><span class="mono-label">/ fomin / home</span><span class="mono-label">scroll to explore ↓</span></div>
-              <div class="home-hero"><div class="home-intro"><p class="eyebrow" data-i18n="hero_eyebrow">IT · Telegram-боты · Сайты</p><h2>Привет,<br>я <em>Никита.</em></h2><p class="hero-description" data-i18n="hero_sub">Делаю Telegram-ботов и сайты, которые не просто существуют — а продают, принимают заказы и работают на ваш бизнес каждый день.</p><div class="home-actions"><button class="primary-action" data-view="work" data-i18n="hero_btn_secondary">Смотреть работы <span>↘</span></button><a class="text-action" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-i18n="hero_btn_primary">Написать в Telegram ↗</a></div></div><div class="home-art"><div class="art-index">01 / 03</div><div class="art-card art-back"><img src="assets/wave_beer-960.webp" alt="Wave Beer" loading="eager"></div><div class="art-card art-front"><img src="assets/floressa-4.webp" alt="FLORESSA" loading="eager"><span>shipping digital<br>objects since 2021</span></div><div class="art-stamp">F<br><i>+</i><br>O</div></div></div>
+              <div class="view-topline"><span class="mono-label">/ fomin / home</span><span class="mono-label" data-i18n="scroll_explore">scroll to explore ↓</span></div>
+              <div class="home-hero"><div class="home-intro"><p class="eyebrow" data-i18n="hero_eyebrow">IT · Telegram-боты · Сайты</p><h2 data-i18n="hero_title">Привет,<br>я <em>Никита.</em></h2><p class="hero-description" data-i18n="hero_sub">Делаю Telegram-ботов и сайты, которые не просто существуют — а продают, принимают заказы и работают на ваш бизнес каждый день.</p><div class="home-actions"><button class="primary-action" data-view="work" data-i18n="hero_btn_secondary">Смотреть работы <span>↘</span></button><a class="text-action" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-i18n="hero_btn_primary">Написать в Telegram ↗</a></div></div><div class="home-art"><div class="art-index">01 / 03</div><div class="art-card art-back"><img src="assets/wave_beer-960.webp" alt="Wave Beer" loading="eager"></div><div class="art-card art-front"><img src="assets/floressa-4.webp" alt="FLORESSA" loading="eager"><span data-i18n="art_caption">shipping digital<br>objects since 2021</span></div><div class="art-stamp">F<br><i>+</i><br>O</div></div></div>
               <div class="home-bottom"><div><span class="mono-label" data-i18n="home_selected_label">Selected work</span><strong>03</strong></div><div><span class="mono-label" data-i18n="home_stack_label">Stack</span><strong>HTML / CSS / JS / PY</strong></div><div><span class="mono-label" data-i18n="home_location_label">Based in</span><strong>ODESA · UA</strong></div></div>
               <div class="home-cta-strip"><div><span class="mono-label" data-i18n="home_cta_note">Первый ответ — без долгой формы и лишних созвонов.</span><strong data-i18n="home_cta_title">Есть задача? Давай соберём решение.</strong></div><button class="primary-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
             </section>
@@ -146,7 +146,7 @@
             </section>
           </div>
         </div>
-        <div class="window-status"><span><i></i> fomin.app is running</span><span>drag to explore <b>↕</b></span></div>
+        <div class="window-status"><span><i></i> fomin.app is running</span><span data-i18n="drag_explore">drag to explore <b>↕</b></span></div>
       </section>
 
       <div class="dock" aria-label="Quick launch"><button class="dock-app dock-fomin" data-open-app="true" aria-label="Open Fomin app">F</button><span></span><button class="dock-app dock-work" data-view="work" aria-label="Open work">▧</button><button class="dock-app dock-source" data-view="source" aria-label="Open open source">⌘</button><button class="dock-app dock-contact" data-view="contact" aria-label="Open contact">↗</button></div>

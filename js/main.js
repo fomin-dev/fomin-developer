@@ -24,7 +24,8 @@
   const clock = document.getElementById('clock');
   const updateClock = () => {
     if (!clock) return;
-    clock.textContent = new Intl.DateTimeFormat('ru-RU', { hour: '2-digit', minute: '2-digit' }).format(new Date());
+    const locale = document.documentElement.lang === 'uk' ? 'uk-UA' : document.documentElement.lang === 'en' ? 'en-GB' : 'ru-RU';
+    clock.textContent = new Intl.DateTimeFormat(locale, { hour: '2-digit', minute: '2-digit' }).format(new Date());
   };
   updateClock();
   window.setInterval(updateClock, 30000);
