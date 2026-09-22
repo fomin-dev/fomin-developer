@@ -195,7 +195,7 @@
   /* ---------------- Keyboard shortcuts ---------------- */
   document.addEventListener('keydown', (event) => {
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
-    const shortcuts = { '1': 'home', '2': 'about', '3': 'work', '4': 'services', '5': 'pricing', '6': 'source', '7': 'contact' };
+    const shortcuts = { '1': 'home', '2': 'about', '3': 'work', '4': 'services', '5': 'pricing', '6': 'contact' };
     if (shortcuts[event.key]) switchView(shortcuts[event.key]);
   });
 

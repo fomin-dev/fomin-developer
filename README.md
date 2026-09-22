@@ -2,17 +2,14 @@
 
 **Live site:** [fomin-developer.pages.dev](https://fomin-developer.pages.dev/)
 
-A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The experience is presented as Fomin OS: an Ubuntu/macOS-inspired desktop shell that opens a portfolio app with editorial case studies, services, pricing, contact channels and an open-source utility. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
+A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The experience is presented as Fomin OS: an Ubuntu/macOS-inspired desktop shell that opens a portfolio app with editorial case studies, services, pricing, contact channels. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
 
 ![Portfolio preview](docs/preview-hero.jpg)
 
 ## What the site provides
 
-The site presents services, starting prices, three client case studies, an open-source temporary email creator and direct contact channels inside the Fomin portfolio app. It supports Russian, English and Ukrainian UI text. The desktop shell includes a system bar, wallpaper, desktop icons, dock, window controls, workspace navigation, animated view transitions and case-study modals. The content remains accessible without relying on the visual effects; JavaScript progressively enhances language selection, app controls, keyboard shortcuts, workspace navigation and modal interactions.
+The site presents services, starting prices, three client case studies, direct contact channels inside the Fomin portfolio app. It supports Russian, English and Ukrainian UI text. The desktop shell includes a system bar, wallpaper, desktop icons, dock, window controls, workspace navigation, animated view transitions and case-study modals. The content remains accessible without relying on the visual effects; JavaScript progressively enhances language selection, app controls, keyboard shortcuts, workspace navigation and modal interactions.
 
-## Open-source product
-
-The site includes [`create_emails.py`](create_emails.py), a dependency-free Python CLI for creating temporary email addresses through GuerrillaMail and Tempmail. The complete setup guide, command reference, examples and responsible-use notes are available in [`GUIDE_TEMP_EMAILS.md`](GUIDE_TEMP_EMAILS.md).
 
 | Area | Implementation |
 |---|---|
@@ -43,8 +40,6 @@ i18n/uk.json                Ukrainian dictionary
 assets/                     JPEG originals and generated WebP assets
 scripts/build.js            CSS/JS minification and responsive WebP generation
 scripts/check.js            Static quality checks
-create_emails.py            Temporary email creator CLI
-GUIDE_TEMP_EMAILS.md        Product setup and usage guide
 sw.js                       Service worker
 _headers                    Cloudflare Pages security and cache headers
 robots.txt, sitemap.xml     Search crawler directives
