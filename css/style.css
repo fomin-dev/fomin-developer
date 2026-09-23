@@ -195,13 +195,10 @@ ul,ol{list-style:none}
 .work-panel-view{flex-shrink:0;width:54px;height:54px;display:grid;place-items:center;border-radius:8px;background:var(--ink);color:var(--paper);font:600 9px var(--mono);text-transform:uppercase;letter-spacing:.04em;transition:transform .25s var(--ease)}
 .work-panel-view:hover{transform:scale(1.08)}
 
-/* right column: a cropped, dimmed peek of the NEXT case bleeding in from
-   the edge — click it to advance, matching the reference's carousel feel */
-.work-panel-next{position:relative;height:min(64vh,520px);width:82%;margin-left:auto;border-radius:14px 0 0 14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.3);-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%);mask-image:linear-gradient(90deg,transparent,#000 20%);transform:translateX(6%);transition:transform .4s var(--ease)}
-.work-panel-next:hover{transform:translateX(0)}
-.work-panel-next img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.9);transition:filter .4s ease}
-.work-panel-next:hover img{filter:brightness(.85) saturate(1)}
-.work-panel-next-label{position:absolute;z-index:2;top:18px;right:18px;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:rgba(15,10,6,.4);padding:8px 6px;border-radius:6px}
+/* right column: each case shows its own screenshot */
+.work-panel-visual{position:relative;height:min(64vh,520px);width:92%;margin-left:auto;border-radius:14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.3)}
+.work-panel-visual img{width:100%;height:100%;object-fit:cover}
+.work-panel-vertical{position:absolute;z-index:2;top:18px;right:18px;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:rgba(15,10,6,.4);padding:8px 6px;border-radius:6px}
 
 /* ============================================================
    Services / pricing
@@ -338,9 +335,9 @@ ul,ol{list-style:none}
   .work-pin{position:static;height:auto;background:none!important;color:var(--ink);display:flex;flex-direction:column;gap:20px;padding:0 clamp(20px,4vw,56px) 40px}
   .work-rail{display:none}
   .work-stage{position:static;max-width:none}
-  .work-panel{position:static;opacity:1;visibility:visible;pointer-events:auto;grid-template-columns:1fr;gap:0;padding:32px clamp(20px,4vw,28px);margin-bottom:20px;border-radius:16px;background:var(--project);color:var(--paper)}
+  .work-panel{position:static;opacity:1;visibility:visible;pointer-events:auto;grid-template-columns:1fr;gap:24px;padding:32px clamp(20px,4vw,28px);margin-bottom:20px;border-radius:16px;background:var(--project);color:var(--paper)}
   .work-panel-info{max-width:none;padding-right:0}
-  .work-panel-next{display:none}
+  .work-panel-visual{width:100%;height:280px;order:-1}
   .price-grid{grid-template-columns:1fr 1fr}
   .price-notes{grid-template-columns:1fr}
   .case-dialog{grid-template-columns:1fr;max-height:92vh}
@@ -351,6 +348,7 @@ ul,ol{list-style:none}
   .hero{padding-top:110px;min-height:auto}
   .hero-name-big{gap:.12em}
   .hero-meta{flex-wrap:wrap;gap:18px 24px}
+  .work-panel-visual{height:220px}
   .work-panel-info h3{font-size:26px}
   .service-stack article{grid-template-columns:28px 1fr}
   .service-stack article>b{grid-column:2;justify-self:start;text-align:left;margin-top:6px}

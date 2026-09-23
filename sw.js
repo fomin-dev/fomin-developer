@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fomin-portfolio-v12-work-gallery';
+const CACHE_NAME = 'fomin-portfolio-v13-own-visuals';
 const CORE_ASSETS = [
   '/',
   '/index.html',

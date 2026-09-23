@@ -29,7 +29,6 @@
   const workRailNum = document.getElementById('workRailNum');
   const workPanels = document.querySelectorAll('[data-work-panel]');
   const workDots = document.querySelectorAll('[data-work-dot]');
-  const workNextButtons = document.querySelectorAll('[data-work-next]');
   const workProjectOrder = Array.from(workPanels).map((panel) => panel.dataset.workProject);
   const updateWorkScroller = () => {
     if (!workScroller || !workPanels.length) return;
@@ -44,17 +43,6 @@
     if (workPin && workPin.dataset.workTheme !== project) workPin.dataset.workTheme = project;
     if (workRailNum) workRailNum.textContent = String(index + 1).padStart(2, '0');
   };
-
-  const jumpToWorkProject = (name) => {
-    const index = workProjectOrder.indexOf(name);
-    if (index < 0 || !workScroller) return;
-    const total = workScroller.offsetHeight - window.innerHeight;
-    if (total <= 0) return;
-    const targetProgress = (index + 0.5) / workPanels.length;
-    const targetTop = workScroller.offsetTop + targetProgress * total;
-    window.scrollTo({ top: targetTop, behavior: reduceMotion ? 'auto' : 'smooth' });
-  };
-  workNextButtons.forEach((btn) => btn.addEventListener('click', () => jumpToWorkProject(btn.dataset.workNext)));
 
   const onScroll = () => {
     const doc = document.documentElement;
