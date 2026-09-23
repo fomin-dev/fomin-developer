@@ -205,6 +205,8 @@
   "alt_modulehouse_6": "Module House contact details",
   "home_languages_label": "Languages",
   "work_open_case": "View case ↗",
+  "work_view_case": "View",
+  "work_next_aria": "Next case",
   "status_online": "Online now · fast replies",
   "status_offline": "Offline · back in the morning",
   "status_hours": "Working hours 10:00–20:00 (Kyiv time)",

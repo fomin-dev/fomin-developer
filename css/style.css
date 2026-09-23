@@ -164,12 +164,13 @@ ul,ol{list-style:none}
 .work-pin[data-work-theme="module"]{--project:#4c6066}
 /* each panel also carries its own color so the mobile fallback (stacked,
    non-pinned cards) doesn't depend on the scroll-driven pin theme */
-.work-panel[data-project="floressa"]{--project:#b8415a}
-.work-panel[data-project="wave"]{--project:#8f5f18}
-.work-panel[data-project="module"]{--project:#4c6066}
+.work-panel[data-work-project="floressa"]{--project:#b8415a}
+.work-panel[data-work-project="wave"]{--project:#8f5f18}
+.work-panel[data-work-project="module"]{--project:#4c6066}
 
-/* a pinned, full-bleed gallery: the background and both columns swap
-   per case study as the page scrolls through the section */
+/* a pinned, full-bleed gallery — the background swaps per case study as the
+   page scrolls, and the right column always peeks the NEXT case, not the
+   current one, so advancing it reads as a reveal rather than a picture */
 .work-scroller{position:relative;height:300vh}
 .work-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;background:var(--project);color:var(--paper);transition:background-color .6s var(--ease)}
 .work-rail{position:absolute;z-index:3;left:clamp(14px,3vw,36px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;font:10px var(--mono);color:var(--paper)}
@@ -180,27 +181,27 @@ ul,ol{list-style:none}
 .work-dots li.active{background:var(--paper);transform:scale(1.4)}
 
 .work-stage{position:relative;flex:1;max-width:var(--container);width:100%;margin:0 auto}
-.work-panel{position:absolute;inset:0;display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:48px;text-align:left;padding:110px clamp(64px,7vw,100px) 108px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s ease,visibility 0s .5s}
+.work-panel{position:absolute;inset:0;display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:0;text-align:left;padding:110px 0 108px clamp(64px,7vw,100px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s ease,visibility 0s .5s}
 .work-panel.active{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .5s ease,visibility 0s}
-.work-panel-info{display:flex;flex-direction:column;gap:14px;max-width:380px}
+.work-panel-info{display:flex;flex-direction:column;gap:14px;max-width:360px;padding-right:32px}
 .work-panel-badge{display:inline-block;width:fit-content;padding:5px 9px;border:1px solid rgba(242,239,230,.35);border-radius:4px;color:var(--paper);font:9px var(--mono)}
 .work-panel-info h3{font:700 clamp(30px,4vw,46px)/1.05 var(--display);letter-spacing:-.01em}
 .work-panel-info p{color:var(--paper);font-size:14px;line-height:1.6}
 .work-panel-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
 .work-panel-tags li{padding:5px 9px;border:1px solid rgba(242,239,230,.32);border-radius:999px;color:var(--paper);font:9px var(--mono)}
-.work-panel-open{display:inline-flex;align-items:center;gap:8px;width:fit-content;margin-top:8px;padding-bottom:2px;border-bottom:1px solid rgba(242,239,230,.55);color:var(--paper);font:600 12px var(--mono);transition:gap .25s var(--ease)}
-.work-panel:hover .work-panel-open{gap:12px}
-.work-panel-visual{position:relative;height:min(64vh,520px);border-radius:14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.3)}
-.work-panel-visual img{width:100%;height:100%;object-fit:cover}
-.work-panel-vertical{position:absolute;z-index:2;top:18px;right:18px;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:rgba(15,10,6,.35);padding:8px 6px;border-radius:6px}
+.work-panel-actions{display:flex;align-items:center;gap:18px;margin-top:10px}
+.work-panel-open{display:inline-flex;align-items:center;gap:8px;padding-bottom:2px;border-bottom:1px solid rgba(242,239,230,.55);color:var(--paper);font:600 12px var(--mono);transition:gap .25s var(--ease)}
+.work-panel-open:hover{gap:12px}
+.work-panel-view{flex-shrink:0;width:54px;height:54px;display:grid;place-items:center;border-radius:8px;background:var(--ink);color:var(--paper);font:600 9px var(--mono);text-transform:uppercase;letter-spacing:.04em;transition:transform .25s var(--ease)}
+.work-panel-view:hover{transform:scale(1.08)}
 
-.work-peek{position:absolute;z-index:3;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:2px}
-.work-peek-item{width:78px;height:54px;position:relative;overflow:hidden;border-radius:6px 6px 0 0;opacity:.4;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease}
-.work-peek-item img{width:100%;height:100%;object-fit:cover}
-.work-peek-item.active{opacity:1;transform:translateY(0)}
-.work-peek-item:hover{opacity:.85}
-.work-peek-item:focus-visible{opacity:1;outline:2px solid var(--paper);outline-offset:-2px}
-.view-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:34px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* right column: a cropped, dimmed peek of the NEXT case bleeding in from
+   the edge — click it to advance, matching the reference's carousel feel */
+.work-panel-next{position:relative;height:min(64vh,520px);width:82%;margin-left:auto;border-radius:14px 0 0 14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.3);-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%);mask-image:linear-gradient(90deg,transparent,#000 20%);transform:translateX(6%);transition:transform .4s var(--ease)}
+.work-panel-next:hover{transform:translateX(0)}
+.work-panel-next img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.9);transition:filter .4s ease}
+.work-panel-next:hover img{filter:brightness(.85) saturate(1)}
+.work-panel-next-label{position:absolute;z-index:2;top:18px;right:18px;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:rgba(15,10,6,.4);padding:8px 6px;border-radius:6px}
 
 /* ============================================================
    Services / pricing
@@ -335,10 +336,11 @@ ul,ol{list-style:none}
   .value-layout{grid-template-columns:1fr}
   .work-scroller{height:auto}
   .work-pin{position:static;height:auto;background:none!important;color:var(--ink);display:flex;flex-direction:column;gap:20px;padding:0 clamp(20px,4vw,56px) 40px}
-  .work-rail,.work-peek{display:none}
+  .work-rail{display:none}
   .work-stage{position:static;max-width:none}
-  .work-panel{position:static;opacity:1;visibility:visible;pointer-events:auto;grid-template-columns:1fr;gap:24px;padding:32px clamp(20px,4vw,28px);margin-bottom:20px;border-radius:16px;background:var(--project);color:var(--paper)}
-  .work-panel-visual{height:280px;order:-1}
+  .work-panel{position:static;opacity:1;visibility:visible;pointer-events:auto;grid-template-columns:1fr;gap:0;padding:32px clamp(20px,4vw,28px);margin-bottom:20px;border-radius:16px;background:var(--project);color:var(--paper)}
+  .work-panel-info{max-width:none;padding-right:0}
+  .work-panel-next{display:none}
   .price-grid{grid-template-columns:1fr 1fr}
   .price-notes{grid-template-columns:1fr}
   .case-dialog{grid-template-columns:1fr;max-height:92vh}
@@ -349,7 +351,6 @@ ul,ol{list-style:none}
   .hero{padding-top:110px;min-height:auto}
   .hero-name-big{gap:.12em}
   .hero-meta{flex-wrap:wrap;gap:18px 24px}
-  .work-panel-visual{height:220px}
   .work-panel-info h3{font-size:26px}
   .service-stack article{grid-template-columns:28px 1fr}
   .service-stack article>b{grid-column:2;justify-self:start;text-align:left;margin-top:6px}
