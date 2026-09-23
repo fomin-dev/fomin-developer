@@ -22,12 +22,29 @@
   const progressBar = document.querySelector('.progress i');
   const nav = document.getElementById('siteNav');
   let ticking = false;
+
+  /* ---------------- Work gallery: pinned split-screen scroll steps ---------------- */
+  const workScroller = document.getElementById('workScroller');
+  const workPanels = document.querySelectorAll('[data-work-panel]');
+  const workDots = document.querySelectorAll('[data-work-dot]');
+  const updateWorkScroller = () => {
+    if (!workScroller || !workPanels.length) return;
+    const rect = workScroller.getBoundingClientRect();
+    const total = rect.height - window.innerHeight;
+    if (total <= 0) return;
+    const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+    const index = Math.min(workPanels.length - 1, Math.floor(progress * workPanels.length));
+    workPanels.forEach((panel, i) => panel.classList.toggle('active', i === index));
+    workDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  };
+
   const onScroll = () => {
     const doc = document.documentElement;
     const scrollTop = doc.scrollTop || document.body.scrollTop;
     const height = (doc.scrollHeight - doc.clientHeight) || 1;
     if (progressBar) progressBar.style.transform = `scaleX(${Math.min(scrollTop / height, 1)})`;
     nav?.classList.toggle('scrolled', scrollTop > 8);
+    updateWorkScroller();
     ticking = false;
   };
   document.addEventListener('scroll', () => {

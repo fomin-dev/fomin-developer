@@ -51,7 +51,7 @@
 
   <header class="nav" id="siteNav">
     <div class="nav-inner">
-      <a class="nav-mark" href="#top"><span class="nav-mark-glyph">F</span><span class="nav-mark-script">Фомин</span></a>
+      <a class="nav-mark" href="#top"><span class="nav-mark-glyph">F</span><span class="nav-mark-script">Никита</span></a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="#about" data-nav="about" data-i18n="nav_about">Обо мне</a>
         <a href="#work" data-nav="work" data-i18n="nav_portfolio">Портфолио</a>
@@ -85,7 +85,7 @@
         <p class="eyebrow" data-reveal data-i18n="hero_eyebrow">IT · Telegram-боты · Сайты</p>
         <h1 class="hero-name" data-reveal>
           <span class="hero-name-hi" data-i18n="hero_title">Привет,<br>я <em>Никита.</em></span>
-          <span class="hero-name-big"><b data-i18n="hero_first_name">Никита</b><i data-i18n="hero_last_name">Фомин</i></span>
+          <span class="hero-name-big"><b data-i18n="hero_first_name">Никита</b></span>
         </h1>
         <div class="hero-foot">
           <p class="hero-sub" data-reveal data-i18n="hero_sub">Делаю Telegram-ботов и сайты, которые не просто существуют — а продают, принимают заказы и работают на ваш бизнес каждый день.</p>
@@ -150,29 +150,59 @@
       </div>
     </section>
 
-    <section class="section work" id="work">
-      <div class="section-head section-head-split" data-reveal>
-        <div><p class="eyebrow" data-i18n="work_eyebrow">03 — Портфолио</p><h2 data-i18n="work_title">Портфолио</h2></div>
-        <span class="heading-note">click a case<br>to open details ↗</span>
+    <section class="work" id="work">
+      <div class="section work-intro">
+        <div class="section-head section-head-split" data-reveal>
+          <div><p class="eyebrow" data-i18n="work_eyebrow">03 — Портфолио</p><h2 data-i18n="work_title">Портфолио</h2></div>
+          <span class="heading-note">click a case<br>to open details ↗</span>
+        </div>
       </div>
-      <div class="work-grid">
-        <button class="work-card work-card-large" data-project="floressa" data-reveal>
-          <span class="work-number">01</span>
-          <div class="work-image"><img src="assets/floressa-4-320.webp" srcset="assets/floressa-4-320.webp 320w, assets/floressa-4.webp 640w" sizes="(max-width:760px) 90vw, 44vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
-          <div class="work-meta"><div><h3 data-i18n="case_floressa_title">FLORESSA</h3><p data-i18n="case_floressa_kicker">Telegram-бот для цветочного магазина</p></div><span class="work-type" data-i18n="case_floressa_badge">Telegram-бот</span></div>
-        </button>
-        <button class="work-card" data-project="wave" data-reveal>
-          <span class="work-number">02</span>
-          <div class="work-image"><img src="assets/wave_beer-480.webp" srcset="assets/wave_beer-480.webp 480w, assets/wave_beer-960.webp 960w" sizes="(max-width:760px) 90vw, 32vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
-          <div class="work-meta"><div><h3 data-i18n="case_wave_title">Wave Beer</h3><p data-i18n="case_wave_kicker">Сайт крафтового бару в Одесі</p></div><span class="work-type" data-i18n="case_wave_badge">Сайт</span></div>
-        </button>
-        <button class="work-card" data-project="module" data-reveal>
-          <span class="work-number">03</span>
-          <div class="work-image"><img src="assets/module-house-hero-480.webp" srcset="assets/module-house-hero-480.webp 480w, assets/module-house-hero-960.webp 960w" sizes="(max-width:760px) 90vw, 32vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
-          <div class="work-meta"><div><h3 data-i18n="case_modulehouse_title">Module House</h3><p data-i18n="case_modulehouse_kicker">Каталог модульных домов, бань и офисов под ключ</p></div><span class="work-type" data-i18n="case_modulehouse_badge">Сайт</span></div>
-        </button>
+
+      <div class="work-scroller" id="workScroller">
+        <div class="work-pin">
+          <div class="work-left">
+            <p class="work-blurb" data-i18n="work_cta_title">Нужен такой же аккуратный запуск?</p>
+            <a class="btn-primary" href="#contact"><span data-i18n="dock_contact">Связаться ↗</span></a>
+            <ol class="work-dots" id="workDots" aria-hidden="true">
+              <li data-work-dot="floressa"></li>
+              <li data-work-dot="wave"></li>
+              <li data-work-dot="module"></li>
+            </ol>
+          </div>
+          <div class="work-right">
+            <button class="work-panel" data-project="floressa" data-work-panel>
+              <span class="work-panel-index">01 / 03</span>
+              <div class="work-panel-image"><img src="assets/floressa-4-320.webp" srcset="assets/floressa-4-320.webp 320w, assets/floressa-4.webp 640w" sizes="(max-width:1180px) 90vw, 38vw" alt="" loading="lazy"></div>
+              <div class="work-panel-body">
+                <span class="work-panel-badge" data-i18n="case_floressa_badge">Telegram-бот</span>
+                <h3 data-i18n="case_floressa_title">FLORESSA</h3>
+                <p data-i18n="case_floressa_kicker">Telegram-бот для цветочного магазина</p>
+              </div>
+              <span class="work-panel-open" data-i18n="work_open_case">Открыть кейс ↗</span>
+            </button>
+            <button class="work-panel" data-project="wave" data-work-panel>
+              <span class="work-panel-index">02 / 03</span>
+              <div class="work-panel-image"><img src="assets/wave_beer-480.webp" srcset="assets/wave_beer-480.webp 480w, assets/wave_beer-960.webp 960w" sizes="(max-width:1180px) 90vw, 38vw" alt="" loading="lazy"></div>
+              <div class="work-panel-body">
+                <span class="work-panel-badge" data-i18n="case_wave_badge">Сайт</span>
+                <h3 data-i18n="case_wave_title">Wave Beer</h3>
+                <p data-i18n="case_wave_kicker">Сайт крафтового бару в Одесі</p>
+              </div>
+              <span class="work-panel-open" data-i18n="work_open_case">Открыть кейс ↗</span>
+            </button>
+            <button class="work-panel" data-project="module" data-work-panel>
+              <span class="work-panel-index">03 / 03</span>
+              <div class="work-panel-image"><img src="assets/module-house-hero-480.webp" srcset="assets/module-house-hero-480.webp 480w, assets/module-house-hero-960.webp 960w" sizes="(max-width:1180px) 90vw, 38vw" alt="" loading="lazy"></div>
+              <div class="work-panel-body">
+                <span class="work-panel-badge" data-i18n="case_modulehouse_badge">Сайт</span>
+                <h3 data-i18n="case_modulehouse_title">Module House</h3>
+                <p data-i18n="case_modulehouse_kicker">Каталог модульных домов, бань и офисов под ключ</p>
+              </div>
+              <span class="work-panel-open" data-i18n="work_open_case">Открыть кейс ↗</span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="view-cta" data-reveal><span class="eyebrow" data-i18n="work_cta_title">Нужен такой же аккуратный запуск?</span><a class="btn-text" href="#contact"><span data-i18n="dock_contact">Связаться ↗</span></a></div>
     </section>
 
     <section class="section services" id="services">
