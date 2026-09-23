@@ -2,19 +2,19 @@
 
 **Live site:** [fomin-developer.pages.dev](https://fomin-developer.pages.dev/)
 
-A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The experience is presented as Fomin OS: an Ubuntu/macOS-inspired desktop shell that opens a portfolio app with editorial case studies, services, pricing, contact channels. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
+A responsive, multilingual portfolio website for a freelance developer specialising in Telegram bots and business websites. The site is a single-page editorial layout — sticky nav, a large typographic hero, a skills marquee, case studies with a multi-image gallery viewer, services, pricing and a contact section built around getting in touch quickly. The project is intentionally built with plain HTML, CSS and JavaScript, keeping the deployed site lightweight and the source easy to maintain.
 
 ![Portfolio preview](docs/preview-hero.jpg)
 
 ## What the site provides
 
-The site presents services, starting prices, three client case studies, direct contact channels inside the Fomin portfolio app. It supports Russian, English and Ukrainian UI text. The desktop shell includes a system bar, wallpaper, desktop icons, dock, window controls, workspace navigation, animated view transitions and case-study modals. The content remains accessible without relying on the visual effects; JavaScript progressively enhances language selection, app controls, keyboard shortcuts, workspace navigation and modal interactions.
+The site presents services, starting prices, three client case studies (each with a captioned screenshot gallery), and direct contact channels with copy-to-clipboard. It supports Russian, English and Ukrainian UI text. A live availability badge in the nav and contact section reflects whether it's currently within working hours (10:00–20:00, Europe/Kyiv) — outside that window it honestly shows an "offline" state instead of a static "available" claim. The content remains accessible without relying on the visual effects; JavaScript progressively enhances language selection, scroll-triggered reveals, the mobile menu, keyboard shortcuts and the case-study modal.
 
 
 | Area | Implementation |
 |---|---|
 | Markup and styles | Semantic HTML5, custom CSS properties, Grid and Flexbox |
-| Interactivity | Vanilla JavaScript and native browser APIs: desktop shell, app window, dock, keyboard shortcuts, parallax, view transitions and case modals |
+| Interactivity | Vanilla JavaScript and native browser APIs: scroll progress, scrollspy nav, reveal-on-scroll, marquee, case-study gallery modal, clipboard copy |
 | Localisation | `data-i18n`, `data-i18n-aria-label` and `data-i18n-alt` attributes with JSON dictionaries for `ru`, `en` and `uk` |
 | Images | JPEG fallback plus generated WebP sources, including responsive variants |
 | Offline behaviour | Versioned service worker; HTML and language dictionaries are network-first to reduce stale UI risk |
@@ -22,7 +22,7 @@ The site presents services, starting prices, three client case studies, direct c
 
 ## Accessibility and reliability
 
-The project includes a skip link, a high-visibility `:focus-visible` style, a keyboard-accessible mobile menu with Escape support and focus containment, gallery buttons with arrow-key navigation, image alternative-text localisation, reduced-motion handling and clearly visible content without a preloader. Interactive motion is limited to capable devices and pauses when the page is not visible.
+The project includes a skip link, a high-visibility `:focus-visible` style, a keyboard-accessible mobile menu with Escape support, a focus-trapped case-study modal (arrow-key gallery navigation, focus returns to the trigger on close), image alternative-text localisation, reduced-motion handling and clearly visible content without a preloader. Interactive motion is limited to capable devices and pauses when the page is not visible.
 
 The Ukrainian language resource uses the standard `uk` code. The displayed language option remains `UA` for visitors, while the document's `lang` attribute is updated to `uk` for browsers and assistive technology.
 
@@ -71,7 +71,7 @@ The build minifies CSS and JavaScript and regenerates full-size plus responsive 
 
 Edit source files only: `index.html`, `css/style.css`, `js/main.js`, the dictionaries in `i18n/`, and original JPEG files in `assets/`. Do not edit `css/style.min.css`, `js/main_min.js` or generated `*-320.webp`, `*-480.webp` and `*-960.webp` files by hand; regenerate them with `npm run build`.
 
-The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The current shell uses `fomin-portfolio-v8-desktop`. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
+The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The current shell uses `fomin-portfolio-v11-editorial`. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
 
 ## Deployment
 

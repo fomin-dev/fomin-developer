@@ -203,5 +203,13 @@
   "alt_modulehouse_4": "About Module House",
   "alt_modulehouse_5": "Module House delivery and purchase steps",
   "alt_modulehouse_6": "Module House contact details",
-  "home_languages_label": "Languages"
+  "home_languages_label": "Languages",
+  "work_open_case": "View case ↗",
+  "status_online": "Online now · fast replies",
+  "status_offline": "Offline · back in the morning",
+  "status_hours": "Working hours 10:00–20:00 (Kyiv time)",
+  "contact_copy": "Copy",
+  "contact_copied": "Copied",
+  "modal_close_label": "Close",
+  "footer_handcrafted": "Handcrafted — plain HTML, CSS and JS, no frameworks."
 }
