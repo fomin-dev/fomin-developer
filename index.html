@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Никита Фомин — цифровой разработчик</title>
-  <meta name="description" content="Портфолио Нікіти Фоміна: Telegram-боти, сайти та цифрові продукти для бізнесу.">
+  <meta name="description" content="Портфолио Никиты Фомина: Telegram-боты, сайты и цифровые продукты для бизнеса.">
   <link rel="canonical" href="https://fomin-developer.pages.dev/">
-  <meta name="theme-color" content="#0b1013">
+  <meta name="theme-color" content="#0a0908">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fomin-developer.pages.dev/">
@@ -23,11 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.min.css?v=10-i18n">
-  <style id="critical-shell-css">
-    html,body{margin:0;min-height:100%;background:#080b0d;color:#f3f5ef;font-family:Arial,sans-serif}body{overflow:hidden}.desktop{min-height:100vh;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(54,112,101,.18),transparent 30%),linear-gradient(135deg,#080b0d,#11191d 45%,#0b1013)}.system-bar{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(9,14,16,.9);color:#efeee9;font-size:11px}.desktop-stage{position:relative;height:calc(100vh - 42px);min-height:578px}.app-window{position:absolute;left:50%;top:50%;width:min(1000px,78vw);height:min(720px,calc(100vh - 110px));min-height:520px;transform:translate(-50%,-50%);display:flex;flex-direction:column;border:1px solid rgba(233,244,238,.18);border-radius:13px;background:rgba(13,18,21,.9);box-shadow:0 30px 100px rgba(0,0,0,.52);overflow:hidden}.window-chrome{height:42px;flex:0 0 42px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(235,244,238,.13)}.app-body{display:flex;min-height:0;flex:1}.app-sidebar{width:190px;flex:0 0 190px}.app-content{min-width:0;flex:1;overflow:auto}.app-view{display:none;padding:28px 38px 34px}.app-view.active{display:block}.desktop-icons{position:absolute;top:30px;right:29px;display:flex;flex-direction:column;gap:18px;align-items:center}.dock{position:absolute;bottom:15px;left:50%;transform:translateX(-50%)}.boot-screen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:#252923;color:#fff}.boot-screen.hidden{display:none}@media(max-width:760px){body{overflow:auto}.desktop{min-height:100vh;overflow:visible}.desktop-stage{height:auto;min-height:calc(100vh - 42px);padding:18px 12px 82px}.app-window{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:0;transform:none}.app-sidebar{width:63px;flex-basis:63px}.desktop-icons{top:17px;right:12px;flex-direction:row;gap:10px}}
-  </style>
-  <style id="critical-dark-css">:root{color-scheme:dark}html,body{background:#080b0d;color:#f3f5ef}.desktop{background:radial-gradient(circle at 78% 18%,rgba(54,112,101,.18),transparent 30%),linear-gradient(135deg,#080b0d,#11191d 45%,#0b1013)}.desktop:before{background:radial-gradient(ellipse at 73% 35%,rgba(114,210,193,.08),transparent 33%),radial-gradient(ellipse at 20% 92%,rgba(255,114,83,.07),transparent 32%)}.app-window{border-color:rgba(233,244,238,.18);background:rgba(13,18,21,.9);box-shadow:0 30px 100px rgba(0,0,0,.52)}.window-chrome{border-color:rgba(235,244,238,.13);background:rgba(22,29,32,.9)}.app-sidebar{border-color:rgba(235,244,238,.13);background:rgba(8,12,15,.66)}.app-content{background:rgba(16,22,25,.28)}.app-nav-item{color:#82908a}.app-nav-item.active{background:#f27659;color:#111719}.home-intro h2,.editorial-head h2,.section-heading h2,.source-hero h2,.contact-view h2{color:#f4f7f1}.primary-action{background:#f27659;color:#111719}.desktop-copy{color:rgba(239,246,239,.28)}.boot-screen{background:#080b0d}.boot-screen.hidden{display:none}</style>
+  <link rel="stylesheet" href="/css/style.min.css?v=11-editorial">
+  <style id="critical-css">html,body{margin:0;min-height:100%;background:#0a0908;color:#f4efe3;font-family:Arial,sans-serif}.boot{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:#0a0908}.boot.hidden{display:none}</style>
   <script id="structuredData" type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -43,105 +40,238 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#appMain" data-i18n="skip_link">Перейти к содержимому</a>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="grain"></div>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Перейти к содержимому</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
 
-  <div class="boot-screen" id="bootScreen" aria-hidden="true">
-    <div class="boot-mark"><span>F</span></div>
-    <div class="boot-copy"><strong>NIKITA / DIGITAL</strong><span>loading selected work</span></div>
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot-mark">F</div>
     <div class="boot-track"><i></i></div>
   </div>
 
-  <div class="desktop" id="desktop">
-    <header class="system-bar">
-      <div class="system-left"><button class="system-logo" id="systemMenu" aria-label="NIKITA / DIGITAL menu">F</button><span class="system-name">NIKITA / DIGITAL</span><span class="system-divider"></span><span class="system-context" data-i18n="desktop_context">Independent digital practice</span></div>
-      <div class="system-right"><div class="system-langs" aria-label="Language"><button class="system-lang active" data-lang="ru" aria-pressed="true">RU</button><button class="system-lang" data-lang="en" aria-pressed="false">EN</button><button class="system-lang" data-lang="uk" aria-pressed="false">UA</button></div><span class="system-status">● <span data-i18n="desktop_status">available for selected projects</span></span><span id="clock">00:00</span><button class="system-power" id="powerButton" aria-label="Close app">×</button></div>
-    </header>
-
-    <main class="desktop-stage" id="appMain">
-      <div class="desktop-copy" aria-hidden="true"><span class="desktop-kicker">EST. 2026 / DIGITAL PRACTICE</span><h1>Make useful<br><em>things.</em></h1><p data-i18n="desktop_tagline">an interactive portfolio<br>by Nikita Fomin</p></div>
-      <div class="desktop-orbit orbit-large"></div><div class="desktop-orbit orbit-small"></div>
-
-      <div class="desktop-icons" aria-label="Desktop apps">
-        <button class="desktop-icon active" data-open-app="true"><span class="icon-window icon-fomin">F</span><b>Fomin</b><small>portfolio.app</small></button>
+  <header class="nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="nav-mark" href="#top"><span class="nav-mark-glyph">F</span><span class="nav-mark-text">NIKITA<i>/</i>DIGITAL</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about" data-nav="about" data-i18n="nav_about">Обо мне</a>
+        <a href="#work" data-nav="work" data-i18n="nav_portfolio">Портфолио</a>
+        <a href="#services" data-nav="services" data-i18n="nav_services">Услуги</a>
+        <a href="#pricing" data-nav="pricing" data-i18n="nav_pricing">Цены</a>
+        <a href="#contact" data-nav="contact" data-i18n="nav_contact">Контакты</a>
+        <a class="nav-links-cta" href="https://t.me/fomin_developer" target="_blank" rel="noopener"><span data-i18n="hero_btn_primary">Написать в Telegram</span> <b>↗</b></a>
+      </nav>
+      <div class="nav-tools">
+        <div class="nav-status" id="navStatus"><i></i><span id="navStatusText"></span></div>
+        <div class="nav-langs" aria-label="Language"><button class="nav-lang active" data-lang="ru" aria-pressed="true">RU</button><button class="nav-lang" data-lang="en" aria-pressed="false">EN</button><button class="nav-lang" data-lang="uk" aria-pressed="false">UA</button></div>
+        <a class="nav-cta" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-i18n="nav_cta">Написать</a>
+        <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navLinks" data-i18n-aria-label="nav_menu_label" aria-label="Открыть меню"><span></span></button>
       </div>
+    </div>
+  </header>
 
-      <section class="app-window" id="fominWindow" aria-label="Fomin portfolio application" aria-hidden="false">
-        <div class="window-chrome">
-          <div class="window-controls"><button class="window-dot close" id="closeApp" aria-label="Close app"></button><button class="window-dot minimize" id="minimizeApp" aria-label="Minimize app"></button><button class="window-dot maximize" id="maximizeApp" aria-label="Maximize app"></button></div>
-          <div class="window-title"><span class="window-title-mark">F</span><span data-i18n="window_title">fomin — portfolio</span><span class="window-live" data-i18n="window_live">live / 2026</span></div>
-          <div class="window-tools"><button id="windowMenu" aria-label="App menu">•••</button></div>
-        </div>
-        <div class="app-body">
-          <aside class="app-sidebar">
-            <div class="sidebar-profile"><div class="profile-avatar"><img src="assets/avatar.jpg" alt="Nikita Fomin" loading="eager"></div><div><strong data-i18n="profile_name">Nikita Fomin</strong><span data-i18n="profile_role">independent developer</span></div></div>
-            <nav class="app-nav" aria-label="Fomin app navigation">
-              <button class="app-nav-item active" data-view="home"><span>⌂</span><b data-i18n="dock_home">Home</b></button>
-              <button class="app-nav-item" data-view="about"><span>◌</span><b data-i18n="dock_about">About</b></button>
-              <button class="app-nav-item" data-view="work"><span>▧</span><b data-i18n="dock_work">Selected work</b></button>
-              <button class="app-nav-item" data-view="services"><span>✦</span><b data-i18n="dock_services">Services</b></button>
-              <button class="app-nav-item" data-view="pricing"><span>↗</span><b data-i18n="dock_pricing">Pricing</b></button>
-            </nav>
-            <div class="sidebar-bottom"><div class="sidebar-chip"><span></span><span data-i18n="sidebar_available">Available for a project</span></div><button class="sidebar-contact" data-view="contact" data-i18n="dock_contact">Contact me ↗</button></div>
-          </aside>
-
-          <div class="app-content" id="appContent">
-            <section class="app-view active" data-view-panel="home">
-              <div class="view-topline"><span class="mono-label">/ fomin / home</span><span class="mono-label" data-i18n="scroll_explore">scroll to explore ↓</span></div>
-              <div class="home-hero"><div class="home-intro"><p class="eyebrow" data-i18n="hero_eyebrow">IT · Telegram-боты · Сайты</p><h2 data-i18n="hero_title">Привет,<br>я <em>Никита.</em></h2><p class="hero-description" data-i18n="hero_sub">Делаю Telegram-ботов и сайты, которые не просто существуют — а продают, принимают заказы и работают на ваш бизнес каждый день.</p><div class="home-actions"><button class="primary-action" data-view="work" data-i18n="hero_btn_secondary">Смотреть работы <span>↘</span></button><a class="text-action" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-i18n="hero_btn_primary">Написать в Telegram ↗</a></div></div><div class="home-art"><div class="art-index">01 / 03</div><div class="art-card art-back"><img src="assets/wave_beer-960.webp" alt="Wave Beer" loading="eager"></div><div class="art-card art-front"><img src="assets/avatar.jpg" alt="Nikita Fomin" loading="eager"><span data-i18n="art_caption">shipping digital<br>objects since 2021</span></div><div class="art-stamp">F<br><i>+</i><br>O</div></div></div>
-              <div class="home-bottom"><div><span class="mono-label" data-i18n="home_selected_label">Selected work</span><strong>03</strong></div><div><span class="mono-label" data-i18n="home_stack_label">Stack</span><strong>HTML / CSS / JS / PY</strong></div><div><span class="mono-label" data-i18n="home_languages_label">Selected work</span><strong>UA / EN / RU</strong></div></div>
-              <div class="home-cta-strip"><div><span class="mono-label" data-i18n="home_cta_note">Первый ответ — без долгой формы и лишних созвонов.</span><strong data-i18n="home_cta_title">Есть задача? Давай соберём решение.</strong></div><button class="primary-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
-            </section>
-
-            <section class="app-view" data-view-panel="about">
-              <div class="view-topline"><span class="mono-label">/ fomin / about</span><span class="mono-label">independent mode</span></div>
-              <div class="editorial-head"><p class="eyebrow" data-i18n="about_eyebrow">01 — Обо мне</p><h2 data-i18n="about_statement">Я разрабатываю <em>цифровые инструменты</em> для бизнеса — от Telegram-ботов с приёмом заказов до сайтов, которым не стыдно показаться клиенту.</h2></div>
-              <div class="about-layout"><div class="about-text"><p data-i18n="about_copy">Работаю один и веду проект от идеи до запуска: обсуждаем задачу, продумываю логику и структуру, пишу код, тестирую и передаю готовый результат — бота или сайт, который уже можно показывать клиентам.</p><div class="about-facts"><div><strong data-i18n="stat_bots">Боты</strong><span data-i18n="stat_bots_label">каталоги, заказы, админ-панели, автопостинг</span></div><div><strong data-i18n="stat_sites">Сайты</strong><span data-i18n="stat_sites_label">лендинги и портфолио с анимацией</span></div></div></div><div class="code-editor"><div class="code-head"><span>about.js</span><span>●●●</span></div><pre><code><span class="code-purple">const</span> <span class="code-blue">fomin</span> = {
-  <span class="code-green">focus</span>: <span class="code-orange">"useful beauty"</span>,
-  <span class="code-green">process</span>: [<span class="code-orange">"think"</span>, <span class="code-orange">"build"</span>, <span class="code-orange">"ship"</span>],
-  <span class="code-green">status</span>: <span class="code-orange">"available"</span>
-};
-
-<span class="code-purple">export default</span> fomin;</code></pre></div></div>
-              <div class="view-cta"><div><span class="eyebrow" data-i18n="about_cta_title">Есть идея, которую пора запустить?</span></div><button class="text-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
-            </section>
-
-            <section class="app-view" data-view-panel="work">
-              <div class="view-topline"><span class="mono-label">/ fomin / selected work</span><span class="mono-label">03 case studies</span></div>
-              <div class="section-heading"><div><p class="eyebrow" data-i18n="work_eyebrow">03 — Портфолио</p><h2 data-i18n="work_title">Портфолио</h2></div><span class="heading-note">Click a case<br>to open details ↗</span></div>
-              <div class="work-grid">
-                <button class="work-card work-card-large" data-project="floressa"><span class="work-number">01</span><div class="work-image"><img src="assets/floressa-4.webp" alt="FLORESSA" loading="lazy"><span class="work-overlay">open case ↗</span></div><div class="work-meta"><div><h3 data-i18n="case_floressa_title">FLORESSA</h3><p data-i18n="case_floressa_kicker">Telegram-бот для цветочного магазина</p></div><span class="work-type" data-i18n="case_floressa_badge">Telegram-бот</span></div></button>
-                <button class="work-card" data-project="wave"><span class="work-number">02</span><div class="work-image"><img src="assets/wave_beer-960.webp" alt="Wave Beer" loading="lazy"><span class="work-overlay">open case ↗</span></div><div class="work-meta"><div><h3 data-i18n="case_wave_title">Wave Beer</h3><p data-i18n="case_wave_kicker">Сайт крафтового бару в Одесі</p></div><span class="work-type" data-i18n="case_wave_badge">Сайт</span></div></button>
-                <button class="work-card" data-project="module"><span class="work-number">03</span><div class="work-image"><img src="assets/module-house-hero-960.webp" alt="Module House" loading="lazy"><span class="work-overlay">open case ↗</span></div><div class="work-meta"><div><h3 data-i18n="case_modulehouse_title">Module House</h3><p data-i18n="case_modulehouse_kicker">Каталог модульных домов, бань и офисов под ключ</p></div><span class="work-type" data-i18n="case_modulehouse_badge">Сайт</span></div></button>
-              </div>
-              <div class="view-cta"><div><span class="eyebrow" data-i18n="work_cta_title">Нужен такой же аккуратный запуск?</span></div><button class="text-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
-            </section>
-
-            <section class="app-view" data-view-panel="services">
-              <div class="view-topline"><span class="mono-label">/ fomin / services</span><span class="mono-label">built around your goal</span></div><div class="section-heading"><div><p class="eyebrow" data-i18n="services_eyebrow">02 — Услуги</p><h2 data-i18n="services_title">Чем могу помочь</h2></div></div>
-              <div class="service-stack"><article><span>01</span><div><h3 data-i18n="service_bots">Telegram-боты</h3><p data-i18n="service_bots_desc">Каталоги товаров с фото и ценами, корзина и оформление заказа, админ-панель для управления ассортиментом, уведомления о новых заказах и интеграции с оплатой — под ваш формат бизнеса.</p></div><b data-i18n="service_bots_tag">под ключ</b></article><article><span>02</span><div><h3 data-i18n="service_sites">Сайты</h3><p data-i18n="service_sites_desc">Одностраничные сайты с продуманной структурой, плавными анимациями и переходами. От первого экрана до формы связи — каждый блок работает на понятную цель.</p></div><b data-i18n="service_sites_tag">лендинг · портфолио</b></article><article><span>03</span><div><h3 data-i18n="service_payments">Оплата и автоматизация</h3><p data-i18n="service_payments_desc">Подключаю приём оплаты (Stripe, PayPal, WayForPay) к уже существующему сайту или Telegram-боту и настраиваю автоматическую передачу заказов в CRM или чат — без ручной обработки каждого заказа.</p></div><b data-i18n="service_payments_tag">для готового сайта или бота</b></article><article class="service-highlight"><span>04</span><div><h3 data-i18n="service_scripts">Скрипты под заказ</h3><p data-i18n="service_scripts_desc">Автоматизация рутинных задач, парсеры, конвертеры, генераторы, интеграции с API и небольшие консольные инструменты — под конкретную задачу и ваш сценарий работы.</p></div><b data-i18n="service_scripts_tag">от 100 USD</b></article></div><div class="view-cta"><div><span class="eyebrow" data-i18n="services_cta_title">Расскажите, что нужно автоматизировать.</span></div><button class="primary-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
-            </section>
-
-            <section class="app-view" data-view-panel="pricing">
-              <div class="view-topline"><span class="mono-label">/ fomin / pricing</span><span class="mono-label">simple starting points</span></div><div class="section-heading"><div><p class="eyebrow" data-i18n="pricing_eyebrow">Цены</p><h2 data-i18n="pricing_title">Стоимость услуг</h2></div></div>
-              <div class="price-grid"><article><span data-i18n="pricing_bot_title">Телеграм бот</span><strong data-i18n="pricing_bot_price">от 25 USD</strong><small data-i18n="pricing_bot_desc">Каталог товаров, корзина, оформление заказа, админ-панель, уведомления о заказах.</small></article><article class="price-featured"><span data-i18n="pricing_site_title">Сайт</span><strong data-i18n="pricing_site_price">от 75 USD</strong><small data-i18n="pricing_site_desc">Лендинг или портфолио с анимациями, адаптивный дизайн, форма связи, оптимизация.</small><i>most popular</i></article><article><span data-i18n="pricing_bundle_title">Сайт + Бот</span><strong data-i18n="pricing_bundle_price">от 79 USD</strong><small data-i18n="pricing_bundle_desc">Сайт с интеграцией автоматизированной системы заказов через Telegram-бота.</small></article><article><span data-i18n="pricing_payments_title">Оплата и автоматизация</span><strong data-i18n="pricing_payments_price">от 50 USD</strong><small data-i18n="pricing_payments_desc">Подключение платёжной системы и автоматизация приёма заказов для существующего сайта или бота.</small></article><article class="price-script"><span data-i18n="pricing_scripts_title">Скрипт под заказ</span><strong data-i18n="pricing_scripts_price">от 100 USD</strong><small data-i18n="pricing_scripts_desc">Индивидуальный Python-скрипт, автоматизация, API-интеграция или CLI-инструмент под вашу задачу.</small><i data-i18n="pricing_scripts_badge">new</i></article></div><div class="support-row"><div><span class="eyebrow" data-i18n="pricing_support_tag">Ежемесячно</span><h3 data-i18n="pricing_support_title">Техническая поддержка</h3><p data-i18n="pricing_support_desc">Если после запуска понадобится вносить правки, обновлять контент или дорабатывать функциональность — беру проект на ежемесячное сопровождение.</p></div><strong data-i18n="pricing_support_price">20 USD / мес</strong></div>
-              <div class="view-cta"><div><span class="eyebrow" data-i18n="pricing_cta_title">Опишите задачу — соберу точный расчёт.</span></div><button class="primary-action" data-view="contact" data-i18n="dock_contact">Связаться ↗</button></div>
-            </section>
-
-            <section class="app-view" data-view-panel="contact">
-              <div class="view-topline"><span class="mono-label">/ fomin / contact</span><span class="mono-label">open channel</span></div><div class="contact-view"><p class="eyebrow" data-i18n="contact_eyebrow">04 — Контакты</p><h2 data-i18n="contact_title">Обсудим ваш проект?</h2><p data-i18n="contact_sub">Расскажите, что нужно — бот, сайт или и то, и другое. Отвечаю быстро и обсуждаю задачу без лишних формальностей.</p><div class="contact-links"><a href="https://t.me/fomin_developer" target="_blank" rel="noopener"><span>Telegram</span><b>@fomin_developer ↗</b></a><a href="https://wa.me/380756431569" target="_blank" rel="noopener"><span>WhatsApp</span><b>+380 756431569 ↗</b></a><a href="https://www.instagram.com/fomin_developer/" target="_blank" rel="noopener"><span>Instagram</span><b>fomin_developer ↗</b></a></div><a class="contact-primary" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-i18n="contact_primary">Начать обсуждение в Telegram ↗</a></div>
-            </section>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal data-i18n="hero_eyebrow">IT · Telegram-боты · Сайты</p>
+          <h1 class="hero-name" data-reveal>
+            <span class="hero-name-hi" data-i18n="hero_title">Привет,<br>я <em>Никита.</em></span>
+            <span class="hero-name-big"><b data-i18n="hero_first_name">Никита</b><i data-i18n="hero_last_name">Фомин</i></span>
+          </h1>
+          <p class="hero-sub" data-reveal data-i18n="hero_sub">Делаю Telegram-ботов и сайты, которые не просто существуют — а продают, принимают заказы и работают на ваш бизнес каждый день.</p>
+          <div class="hero-actions" data-reveal>
+            <a class="btn-primary" href="https://t.me/fomin_developer" target="_blank" rel="noopener"><span data-i18n="hero_btn_primary">Написать в Telegram</span> <b>↗</b></a>
+            <a class="btn-text" href="#work"><span data-i18n="hero_btn_secondary">Смотреть работы</span> <b>↘</b></a>
+          </div>
+          <div class="hero-meta" data-reveal>
+            <div><span class="mono-label" data-i18n="home_selected_label">Избранные работы</span><strong>03</strong></div>
+            <div><span class="mono-label" data-i18n="home_stack_label">Стек</span><strong>HTML / CSS / JS / PY</strong></div>
+            <div><span class="mono-label" data-i18n="home_languages_label">Языки</span><strong>UA / EN / RU</strong></div>
           </div>
         </div>
-        <div class="window-status"><span><i></i> <span data-i18n="app_running">nikita.digital is running</span></span><span data-i18n="drag_explore">drag to explore <b>↕</b></span></div>
-      </section>
+        <div class="hero-art" data-reveal aria-hidden="true">
+          <div class="hero-art-ring"></div>
+          <figure class="hero-art-frame"><img src="assets/avatar-480.webp" srcset="assets/avatar-480.webp 480w, assets/avatar.webp 640w" sizes="(max-width:760px) 60vw, 320px" alt="" loading="eager" width="640" height="640"><figcaption data-i18n="art_caption">создаю цифровые<br>продукты с 2021</figcaption></figure>
+          <span class="hero-art-stamp">F<i>+</i>O</span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about"><span data-i18n="scroll_explore">листайте, чтобы изучить ↓</span></a>
+    </section>
 
-      <div class="dock" aria-label="Quick launch"><button class="dock-app dock-fomin" data-open-app="true" aria-label="Open Fomin app">F</button><span></span><button class="dock-app dock-work" data-view="work" aria-label="Open work">▧</button><button class="dock-app dock-contact" data-view="contact" aria-label="Open contact">↗</button></div>
-    </main>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span data-i18n="marquee1">Telegram-боты</span><span data-i18n="marquee2">Сайты-портфолио</span><span data-i18n="marquee3">Админ-панели</span><span data-i18n="marquee4">Node.js</span><span data-i18n="marquee5">UX/UI</span><span data-i18n="marquee6">Автоматизация заказов</span>
+        <span data-i18n="marquee1">Telegram-боты</span><span data-i18n="marquee2">Сайты-портфолио</span><span data-i18n="marquee3">Админ-панели</span><span data-i18n="marquee4">Node.js</span><span data-i18n="marquee5">UX/UI</span><span data-i18n="marquee6">Автоматизация заказов</span>
+      </div>
+    </div>
+
+    <section class="section about" id="about">
+      <div class="section-head" data-reveal><span class="mono-label">01</span><p class="eyebrow" data-i18n="about_eyebrow">01 — Обо мне</p></div>
+      <h2 class="statement" data-reveal data-i18n="about_statement">Я разрабатываю <em>цифровые инструменты</em> для бизнеса — от Telegram-ботов с приёмом заказов до сайтов, которым не стыдно показаться клиенту.</h2>
+      <div class="about-grid">
+        <div class="about-text" data-reveal>
+          <p data-i18n="about_copy">Работаю один и веду проект от идеи до запуска: обсуждаем задачу, продумываю логику и структуру, пишу код, тестирую и передаю готовый результат — бота или сайт, который уже можно показывать клиентам.</p>
+          <div class="about-facts">
+            <div><strong data-i18n="stat_bots">Боты</strong><span data-i18n="stat_bots_label">каталоги, заказы, админ-панели, автопостинг</span></div>
+            <div><strong data-i18n="stat_sites">Сайты</strong><span data-i18n="stat_sites_label">лендинги и портфолио с анимацией</span></div>
+          </div>
+        </div>
+        <div class="code-editor" data-reveal>
+          <div class="code-head"><span>about.js</span><span>●●●</span></div>
+          <pre><code><span class="code-purple">const</span> <span class="code-blue">fomin</span> = {
+  <span class="code-green">focus</span>: <span class="code-orange">"useful beauty"</span>,
+  <span class="code-green">process</span>: [<span class="code-orange">"think"</span>, <span class="code-orange">"build"</span>, <span class="code-orange">"ship"</span>],
+  <span class="code-green">status</span>: <span class="code-orange">"available 10:00–20:00"</span>
+};
+
+<span class="code-purple">export default</span> fomin;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value" id="value">
+      <div class="section-head" data-reveal><span class="mono-label">＋</span><p class="eyebrow" data-i18n="value_eyebrow">Результат</p></div>
+      <h2 class="statement statement-sm" data-reveal data-i18n="value_title">Что это даёт вашему бизнесу</h2>
+      <div class="value-grid">
+        <article data-reveal><strong data-i18n="value_num3">24/7</strong><p data-i18n="value_item1">Бот принимает и обрабатывает заказы даже ночью — клиент не ждёт, пока вы откроете чат.</p></article>
+        <article data-reveal><strong data-i18n="value_num2">Быстрее</strong><p data-i18n="value_item2">Оптимизирую вес и загрузку, чтобы посетитель быстрее увидел главное и не ждал лишнего.</p></article>
+        <article data-reveal><strong>03</strong><p data-i18n="value_item3">Уведомления о заявках и заказах приходят в выбранный мессенджер — вы быстрее реагируете на клиента.</p></article>
+        <article data-reveal><strong>04</strong><p data-i18n="value_item4">Языка на одном сайте (UA / RU / EN) — не теряете ни местных клиентов, ни туристов.</p></article>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-head section-head-split" data-reveal>
+        <div><span class="mono-label">02</span><p class="eyebrow" data-i18n="work_eyebrow">03 — Портфолио</p><h2 data-i18n="work_title">Портфолио</h2></div>
+        <span class="heading-note">click a case<br>to open details ↗</span>
+      </div>
+      <div class="work-grid">
+        <button class="work-card work-card-large" data-project="floressa" data-reveal>
+          <span class="work-number">01</span>
+          <div class="work-image"><img src="assets/floressa-4-320.webp" srcset="assets/floressa-4-320.webp 320w, assets/floressa-4.webp 640w" sizes="(max-width:760px) 90vw, 44vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
+          <div class="work-meta"><div><h3 data-i18n="case_floressa_title">FLORESSA</h3><p data-i18n="case_floressa_kicker">Telegram-бот для цветочного магазина</p></div><span class="work-type" data-i18n="case_floressa_badge">Telegram-бот</span></div>
+        </button>
+        <button class="work-card" data-project="wave" data-reveal>
+          <span class="work-number">02</span>
+          <div class="work-image"><img src="assets/wave_beer-480.webp" srcset="assets/wave_beer-480.webp 480w, assets/wave_beer-960.webp 960w" sizes="(max-width:760px) 90vw, 32vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
+          <div class="work-meta"><div><h3 data-i18n="case_wave_title">Wave Beer</h3><p data-i18n="case_wave_kicker">Сайт крафтового бару в Одесі</p></div><span class="work-type" data-i18n="case_wave_badge">Сайт</span></div>
+        </button>
+        <button class="work-card" data-project="module" data-reveal>
+          <span class="work-number">03</span>
+          <div class="work-image"><img src="assets/module-house-hero-480.webp" srcset="assets/module-house-hero-480.webp 480w, assets/module-house-hero-960.webp 960w" sizes="(max-width:760px) 90vw, 32vw" alt="" loading="lazy"><span class="work-overlay" data-i18n="work_open_case">Открыть кейс ↗</span></div>
+          <div class="work-meta"><div><h3 data-i18n="case_modulehouse_title">Module House</h3><p data-i18n="case_modulehouse_kicker">Каталог модульных домов, бань и офисов под ключ</p></div><span class="work-type" data-i18n="case_modulehouse_badge">Сайт</span></div>
+        </button>
+      </div>
+      <div class="view-cta" data-reveal><span class="eyebrow" data-i18n="work_cta_title">Нужен такой же аккуратный запуск?</span><a class="btn-text" href="#contact"><span data-i18n="dock_contact">Связаться ↗</span></a></div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-head" data-reveal><span class="mono-label">03</span><p class="eyebrow" data-i18n="services_eyebrow">02 — Услуги</p><h2 data-i18n="services_title">Чем могу помочь</h2></div>
+      <div class="service-stack">
+        <article data-reveal><span>01</span><div><h3 data-i18n="service_bots">Telegram-боты</h3><p data-i18n="service_bots_desc">Каталоги товаров с фото и ценами, корзина и оформление заказа, админ-панель для управления ассортиментом, уведомления о новых заказах и интеграции с оплатой — под ваш формат бизнеса.</p></div><b data-i18n="service_bots_tag">под ключ</b></article>
+        <article data-reveal><span>02</span><div><h3 data-i18n="service_sites">Сайты</h3><p data-i18n="service_sites_desc">Одностраничные сайты с продуманной структурой, плавными анимациями и переходами. От первого экрана до формы связи — каждый блок работает на понятную цель.</p></div><b data-i18n="service_sites_tag">лендинг · портфолио</b></article>
+        <article data-reveal><span>03</span><div><h3 data-i18n="service_payments">Оплата и автоматизация</h3><p data-i18n="service_payments_desc">Подключаю приём оплаты (Stripe, PayPal, WayForPay) к уже существующему сайту или Telegram-боту и настраиваю автоматическую передачу заказов в CRM или чат — без ручной обработки каждого заказа.</p></div><b data-i18n="service_payments_tag">для готового сайта или бота</b></article>
+        <article class="service-highlight" data-reveal><span>04</span><div><h3 data-i18n="service_scripts">Скрипты под заказ</h3><p data-i18n="service_scripts_desc">Автоматизация рутинных задач, парсеры, конвертеры, генераторы, интеграции с API и небольшие консольные инструменты — под конкретную задачу и ваш сценарий работы.</p></div><b data-i18n="service_scripts_tag">от 100 USD</b></article>
+      </div>
+      <div class="view-cta" data-reveal><span class="eyebrow" data-i18n="services_cta_title">Расскажите, что нужно автоматизировать.</span><a class="btn-text" href="#contact"><span data-i18n="dock_contact">Связаться ↗</span></a></div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="section-head" data-reveal><span class="mono-label">04</span><p class="eyebrow" data-i18n="pricing_eyebrow">Цены</p><h2 data-i18n="pricing_title">Стоимость услуг</h2></div>
+      <div class="price-grid">
+        <article data-reveal><span data-i18n="pricing_bot_title">Телеграм бот</span><strong data-i18n="pricing_bot_price">от 25 USD</strong><small data-i18n="pricing_bot_desc">Каталог товаров, корзина, оформление заказа, админ-панель, уведомления о заказах.</small></article>
+        <article class="price-featured" data-reveal><span data-i18n="pricing_site_title">Сайт</span><strong data-i18n="pricing_site_price">от 75 USD</strong><small data-i18n="pricing_site_desc">Лендинг или портфолио с анимациями, адаптивный дизайн, форма связи, оптимизация.</small><i>most popular</i></article>
+        <article data-reveal><span data-i18n="pricing_bundle_title">Сайт + Бот</span><strong data-i18n="pricing_bundle_price">от 79 USD</strong><small data-i18n="pricing_bundle_desc">Сайт с интеграцией автоматизированной системы заказов через Telegram-бота.</small></article>
+        <article data-reveal><span data-i18n="pricing_payments_title">Оплата и автоматизация</span><strong data-i18n="pricing_payments_price">от 50 USD</strong><small data-i18n="pricing_payments_desc">Подключение платёжной системы и автоматизация приёма заказов для существующего сайта или бота.</small></article>
+        <article class="price-script" data-reveal><span data-i18n="pricing_scripts_title">Скрипт под заказ</span><strong data-i18n="pricing_scripts_price">от 100 USD</strong><small data-i18n="pricing_scripts_desc">Индивидуальный Python-скрипт, автоматизация, API-интеграция или CLI-инструмент под вашу задачу.</small><i data-i18n="pricing_scripts_badge">new</i></article>
+      </div>
+      <div class="price-notes">
+        <div data-reveal><b data-i18n="pricing_note_prepay_title">Предоплата — 50%</b><p data-i18n="pricing_note_prepay_desc">Работаю по предоплате в размере половины стоимости проекта. Если клиент отказывается от готового продукта — предоплата не возвращается, так как на разработку уже потрачено время и ресурсы.</p></div>
+        <div data-reveal><b data-i18n="pricing_note_custom_title">Индивидуальный расчёт</b><p data-i18n="pricing_note_custom_desc">Цены на сайте — стартовые. До начала работ согласовываем состав функций, сроки, количество правок и итоговую стоимость.</p></div>
+      </div>
+      <div class="support-row" data-reveal><div><span class="eyebrow" data-i18n="pricing_support_tag">Ежемесячно</span><h3 data-i18n="pricing_support_title">Техническая поддержка</h3><p data-i18n="pricing_support_desc">Если после запуска понадобится вносить правки, обновлять контент или дорабатывать функциональность — беру проект на ежемесячное сопровождение.</p></div><strong data-i18n="pricing_support_price">20 USD / мес</strong></div>
+      <div class="view-cta" data-reveal><span class="eyebrow" data-i18n="pricing_cta_title">Опишите задачу — соберу точный расчёт.</span><a class="btn-text" href="#contact"><span data-i18n="dock_contact">Связаться ↗</span></a></div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-inner">
+        <div class="section-head" data-reveal><span class="mono-label">05</span><p class="eyebrow" data-i18n="contact_eyebrow">04 — Контакты</p></div>
+        <h2 class="contact-title" data-reveal data-i18n="contact_title">Обсудим ваш проект?</h2>
+        <p class="contact-sub" data-reveal data-i18n="contact_sub">Расскажите, что нужно — бот, сайт или и то, и другое. Отвечаю быстро и обсуждаю задачу без лишних формальностей.</p>
+
+        <a class="contact-giant" href="https://t.me/fomin_developer" target="_blank" rel="noopener" data-reveal><span data-i18n="contact_primary">Начать обсуждение в Telegram ↗</span></a>
+
+        <div class="contact-status" data-reveal>
+          <div class="status-pill" id="contactStatus"><i></i><span id="contactStatusText"></span></div>
+          <span class="mono-label" data-i18n="status_hours">Работаю 10:00–20:00 (Киев)</span>
+          <span class="mono-label" id="contactClock"></span>
+        </div>
+
+        <div class="contact-channels" data-reveal>
+          <div class="contact-row">
+            <a href="https://t.me/fomin_developer" target="_blank" rel="noopener"><span>Telegram</span><b>@fomin_developer ↗</b></a>
+            <button type="button" class="copy-btn" data-copy="@fomin_developer" data-i18n="contact_copy">Скопировать</button>
+          </div>
+          <div class="contact-row">
+            <a href="https://wa.me/380756431569" target="_blank" rel="noopener"><span>WhatsApp</span><b>+380 75 643 1569 ↗</b></a>
+            <button type="button" class="copy-btn" data-copy="+380756431569" data-i18n="contact_copy">Скопировать</button>
+          </div>
+          <div class="contact-row">
+            <a href="https://www.instagram.com/fomin_developer/" target="_blank" rel="noopener"><span>Instagram</span><b>fomin_developer ↗</b></a>
+            <button type="button" class="copy-btn" data-copy="@fomin_developer" data-i18n="contact_copy">Скопировать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-status"><i></i><span data-i18n="app_running">nikita.digital работает</span> · <span data-i18n="window_live">live / 2026</span></div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#about" data-i18n="nav_about">Обо мне</a>
+        <a href="#work" data-i18n="nav_portfolio">Портфолио</a>
+        <a href="#services" data-i18n="nav_services">Услуги</a>
+        <a href="#pricing" data-i18n="nav_pricing">Цены</a>
+        <a href="#contact" data-i18n="nav_contact">Контакты</a>
+      </nav>
+      <div class="footer-langs" aria-label="Language"><button class="nav-lang active" data-lang="ru" aria-pressed="true">RU</button><button class="nav-lang" data-lang="en" aria-pressed="false">EN</button><button class="nav-lang" data-lang="uk" aria-pressed="false">UA</button></div>
+      <p class="footer-note" data-i18n="footer_handcrafted">Сделано вручную — HTML, CSS, JS, без фреймворков.</p>
+      <p class="footer-copy" data-i18n="footer_copyright">© 2026 Никита Фомин · fomin-developer</p>
+    </div>
+  </footer>
+
+  <button class="float-cta" id="floatCta" data-i18n-aria-label="dock_contact" aria-label="Связаться"><span data-i18n="dock_contact">Связаться ↗</span></button>
+  <button class="to-top" id="toTop" data-i18n-aria-label="to_top_label" aria-label="Наверх">↑</button>
+
+  <div class="case-modal" id="caseModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="case-dialog">
+      <button class="modal-close" id="modalClose" data-close-modal data-i18n-aria-label="modal_close_label" aria-label="Закрыть">×</button>
+      <div class="modal-gallery">
+        <div class="modal-visual"><img id="modalImage" src="assets/floressa-1.webp" alt=""><span class="modal-counter" id="modalCounter">1 / 1</span></div>
+        <div class="modal-gallery-controls">
+          <button type="button" id="modalPrev" data-i18n-aria-label="gallery_previous" aria-label="Предыдущие скриншоты">←</button>
+          <p class="modal-caption" id="modalCaption"></p>
+          <button type="button" id="modalNext" data-i18n-aria-label="gallery_next" aria-label="Следующие скриншоты">→</button>
+        </div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-copy">
+        <span class="case-modal-type" id="modalType"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-kicker" id="modalKicker"></p>
+        <p id="modalDescription"></p>
+        <p class="modal-highlight" id="modalHighlight"></p>
+        <ul id="modalFeatures"></ul>
+        <blockquote class="modal-testimonial" id="modalTestimonial" hidden><p id="modalTestimonialText"></p><cite id="modalTestimonialSource"></cite></blockquote>
+        <p class="modal-result" id="modalResult"></p>
+        <a class="btn-text" href="#contact" data-close-modal><span data-i18n="dock_contact">Связаться ↗</span></a>
+      </div>
+    </article>
   </div>
 
-  <div class="case-modal" id="caseModal" aria-hidden="true"><div class="modal-backdrop" data-close-modal></div><article class="case-dialog"><button class="modal-close" data-close-modal aria-label="Close">×</button><div class="modal-visual"><img id="modalImage" src="assets/floressa-4.webp" alt=""></div><div class="modal-copy"><span class="case-modal-type" id="modalType"></span><h2 id="modalTitle"></h2><p class="modal-kicker" id="modalKicker"></p><p id="modalDescription"></p><p class="modal-highlight" id="modalHighlight"></p><ul id="modalFeatures"></ul><p class="modal-result" id="modalResult"></p></div></article></div>
-  <div class="toast" id="toast" role="status">Fomin app restored</div>
-  <script src="/js/main_min.js?v=10-i18n" defer></script>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/js/main_min.js?v=11-editorial" defer></script>
 </body>
 </html>

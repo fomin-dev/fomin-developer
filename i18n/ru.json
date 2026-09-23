@@ -203,5 +203,13 @@
   "alt_modulehouse_4": "О компании Module House",
   "alt_modulehouse_5": "Доставка и шаги покупки Module House",
   "alt_modulehouse_6": "Контакты Module House",
-  "home_languages_label": "Языки"
+  "home_languages_label": "Языки",
+  "work_open_case": "Открыть кейс ↗",
+  "status_online": "На связи · отвечаю быстро",
+  "status_offline": "Не на связи · отвечу утром",
+  "status_hours": "Работаю 10:00–20:00 (Киев)",
+  "contact_copy": "Скопировать",
+  "contact_copied": "Скопировано",
+  "modal_close_label": "Закрыть",
+  "footer_handcrafted": "Сделано вручную — HTML, CSS, JS, без фреймворков."
 }
