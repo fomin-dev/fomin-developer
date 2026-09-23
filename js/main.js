@@ -54,14 +54,16 @@
     if (event.key === 'Escape') closeNav();
   });
 
-  /* ---------------- Scrollspy ---------------- */
+  /* ---------------- Scrollspy (nav links + side rail) ---------------- */
   const navAnchors = document.querySelectorAll('[data-nav]');
+  const railDots = document.querySelectorAll('[data-rail]');
   const spySections = [...navAnchors].map((a) => document.getElementById(a.dataset.nav)).filter(Boolean);
   if (spySections.length && 'IntersectionObserver' in window) {
     const spyObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         navAnchors.forEach((a) => a.classList.toggle('active', a.dataset.nav === entry.target.id));
+        railDots.forEach((dot) => dot.classList.toggle('active', dot.dataset.rail === entry.target.id));
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     spySections.forEach((section) => spyObserver.observe(section));
@@ -210,6 +212,7 @@
     if (!data || !modal) return;
     activeProject = name;
     activeIndex = 0;
+    modal.dataset.project = name;
     modalType.textContent = textFor(data.type);
     modalTitle.textContent = textFor(data.title);
     modalKicker.textContent = textFor(data.kicker);
