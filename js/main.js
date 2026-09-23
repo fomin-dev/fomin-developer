@@ -23,10 +23,14 @@
   const nav = document.getElementById('siteNav');
   let ticking = false;
 
-  /* ---------------- Work gallery: pinned split-screen scroll steps ---------------- */
+  /* ---------------- Work gallery: pinned full-bleed scroll steps ---------------- */
   const workScroller = document.getElementById('workScroller');
+  const workPin = document.getElementById('workPin');
+  const workRailNum = document.getElementById('workRailNum');
   const workPanels = document.querySelectorAll('[data-work-panel]');
   const workDots = document.querySelectorAll('[data-work-dot]');
+  const workPeekItems = document.querySelectorAll('[data-peek]');
+  const workProjectOrder = Array.from(workPanels).map((panel) => panel.dataset.project);
   const updateWorkScroller = () => {
     if (!workScroller || !workPanels.length) return;
     const rect = workScroller.getBoundingClientRect();
@@ -34,9 +38,25 @@
     if (total <= 0) return;
     const progress = Math.min(Math.max(-rect.top / total, 0), 1);
     const index = Math.min(workPanels.length - 1, Math.floor(progress * workPanels.length));
+    const project = workProjectOrder[index];
     workPanels.forEach((panel, i) => panel.classList.toggle('active', i === index));
     workDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    workPeekItems.forEach((item) => item.classList.toggle('active', item.dataset.peek === project));
+    if (workPin && workPin.dataset.workTheme !== project) workPin.dataset.workTheme = project;
+    if (workRailNum) workRailNum.textContent = String(index + 1).padStart(2, '0');
   };
+
+  workPeekItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const index = workProjectOrder.indexOf(item.dataset.peek);
+      if (index < 0 || !workScroller) return;
+      const total = workScroller.offsetHeight - window.innerHeight;
+      if (total <= 0) return;
+      const targetProgress = (index + 0.5) / workPanels.length;
+      const targetTop = workScroller.offsetTop + targetProgress * total;
+      window.scrollTo({ top: targetTop, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
 
   const onScroll = () => {
     const doc = document.documentElement;
