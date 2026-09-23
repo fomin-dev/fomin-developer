@@ -205,6 +205,8 @@
   "alt_modulehouse_6": "Контакти Module House",
   "home_languages_label": "Мови",
   "work_open_case": "Відкрити кейс ↗",
+  "work_view_case": "View",
+  "work_next_aria": "Наступний кейс",
   "status_online": "На зв'язку · швидко відповідаю",
   "status_offline": "Не на зв'язку · відповім вранці",
   "status_hours": "Працюю 10:00–20:00 (Київ)",
