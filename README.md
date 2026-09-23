@@ -71,7 +71,7 @@ The build minifies CSS and JavaScript and regenerates full-size plus responsive 
 
 Edit source files only: `index.html`, `css/style.css`, `js/main.js`, the dictionaries in `i18n/`, and original JPEG files in `assets/`. Do not edit `css/style.min.css`, `js/main_min.js` or generated `*-320.webp`, `*-480.webp` and `*-960.webp` files by hand; regenerate them with `npm run build`.
 
-The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The current shell uses `fomin-portfolio-v11-editorial`. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
+The service worker cache name must be increased whenever cached runtime behaviour changes in a way that requires existing visitors to receive a fresh app shell. The current shell uses `fomin-portfolio-v12-work-gallery`. The cache strategy deliberately prefers the network for the document and dictionaries, while static assets can be served from the current versioned cache.
 
 ## Deployment
 
